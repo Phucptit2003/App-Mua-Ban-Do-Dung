@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    >
+
+    <!-- Layout chứa các nút khi vuốt -->
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imgEdit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_button"
+            android:src="@drawable/ic_white_edit_foreground"/>
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/circle_button"
+            android:src="@drawable/ic_white_delete_foreground"/>
+    </LinearLayout>
+
+    <!-- Layout chính của item -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!-- Ảnh avatar -->
+            <include
+                android:id="@+id/lnItemChat"
+                layout="@layout/item_avatar_chat"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!-- Tên người dùng -->
+            <TextView
+                android:id="@+id/txtNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên người dùng"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/lnItemChat"
+                app:layout_constraintTop_toTopOf="@id/lnItemChat"/>
+
+            <!-- Tin nhắn gần nhất -->
+            <TextView
+                android:id="@+id/txtLastMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tin nhắn gần nhất"
+                android:textSize="13sp"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/lnItemChat"
+                app:layout_constraintBottom_toBottomOf="@id/lnItemChat"/>
+
+            <!-- Biểu tượng tin nhắn mới -->
+            <ImageView
+                android:id="@+id/imgNewMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/baseline_circle_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
