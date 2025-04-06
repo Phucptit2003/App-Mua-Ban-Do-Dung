@@ -73,7 +73,7 @@
                     android:layout_weight="9"
                     android:fontFamily="@font/sfpro_black"
                     android:layout_marginStart="10dp"
-                    android:text="My Food"
+                    android:text="My Product"
                     android:textSize="20sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

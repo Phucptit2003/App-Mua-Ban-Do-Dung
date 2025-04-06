@@ -1,14 +1,14 @@
 package com.example.fooddeliveryapplication.Model;
 
-public class Food {
+public class Accessory {
     private int imgSrc;
     private String name;
     private Double price;
 
-    public Food() {
+    public Accessory() {
     }
 
-    public Food(int imgSrc, String name, Double price) {
+    public Accessory(int imgSrc, String name, Double price) {
         this.imgSrc = imgSrc;
         this.name = name;
         price = price;

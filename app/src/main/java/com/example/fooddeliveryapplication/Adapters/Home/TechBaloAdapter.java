@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.fooddeliveryapplication.Fragments.Home.DrinkHomeFrg;
-import com.example.fooddeliveryapplication.Fragments.Home.FoodHomeFrg;
+import com.example.fooddeliveryapplication.Fragments.Home.BagHomeFrg;
+import com.example.fooddeliveryapplication.Fragments.Home.TechAccessoryHomeFrg;
 
-public class FoodDrinkAdapter extends FragmentStateAdapter {
+public class TechBaloAdapter extends FragmentStateAdapter {
     private final String userId;
 
-    public FoodDrinkAdapter(@NonNull Fragment fragment, String id) {
+    public TechBaloAdapter(@NonNull Fragment fragment, String id) {
         super(fragment);
         userId = id;
     }
@@ -19,9 +19,9 @@ public class FoodDrinkAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 1) {
-            return new DrinkHomeFrg(userId);
+            return new BagHomeFrg(userId);
         }
-        return new FoodHomeFrg(userId);
+        return new TechAccessoryHomeFrg(userId);
     }
 
     @Override

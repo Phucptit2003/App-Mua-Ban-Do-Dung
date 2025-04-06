@@ -24,14 +24,14 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class FavouriteFoodAdapter extends RecyclerView.Adapter<FavouriteFoodAdapter.ViewHolder> {
+public class FavouriteTechnologyAccessoryAdapter extends RecyclerView.Adapter<FavouriteTechnologyAccessoryAdapter.ViewHolder> {
     private Context mContext;
     private ArrayList<Product> favouriteLists;
     private String userId;
     private String userName;
     private NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 
-    public FavouriteFoodAdapter(Context mContext, ArrayList<Product> lists,String id) {
+    public FavouriteTechnologyAccessoryAdapter(Context mContext, ArrayList<Product> lists, String id) {
         this.mContext = mContext;
         this.favouriteLists = lists;
         this.userId = id;
@@ -52,11 +52,11 @@ public class FavouriteFoodAdapter extends RecyclerView.Adapter<FavouriteFoodAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new FavouriteFoodAdapter.ViewHolder(ItemFavouriteProductBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new FavouriteTechnologyAccessoryAdapter.ViewHolder(ItemFavouriteProductBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FavouriteFoodAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FavouriteTechnologyAccessoryAdapter.ViewHolder holder, int position) {
         Product product = favouriteLists.get(position);
         if (product != null) {
             if (position==1) {

@@ -45,6 +45,7 @@ import com.example.fooddeliveryapplication.Fragments.Home.FavoriteFragment;
 import com.example.fooddeliveryapplication.Fragments.Home.HomeFragment;
 import com.example.fooddeliveryapplication.Fragments.NotificationFragment;
 import com.example.fooddeliveryapplication.Helpers.FirebaseNotificationHelper;
+import com.example.fooddeliveryapplication.Helpers.FirebaseProductHelper;
 import com.example.fooddeliveryapplication.Helpers.FirebaseProductInfoHelper;
 import com.example.fooddeliveryapplication.Helpers.FirebaseUserInfoHelper;
 import com.example.fooddeliveryapplication.Model.Bill;
@@ -73,6 +74,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private static final int NOTIFICATION_PERMISSION_CODE = 10023;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    FirebaseProductHelper firebaseHelper = new FirebaseProductHelper();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +132,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 .commit();
         setEventNavigationBottom();
         setCartNavigation();
+        ///////////////
+
+
+
+
+        ////////////////////////
         binding.navigationLeft.setNavigationItemSelectedListener(this);
     }
 
@@ -177,6 +187,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         });
     }
+
+
 
     private void setEventNavigationBottom() {
         BottomNavigationView bottomNavigation = binding.bottomNavigation;

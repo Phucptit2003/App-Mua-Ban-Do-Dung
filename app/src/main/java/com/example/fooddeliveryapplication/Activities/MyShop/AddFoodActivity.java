@@ -44,7 +44,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class AddFoodActivity extends AppCompatActivity {
     private ActivityAddFoodBinding binding;
-    private String TAG="Add Food";
+    private String TAG="Add Technology Accessories";
     private int position;
     private int PERMISSION_REQUEST_CODE = 10001;
     private UploadDialog uploadDialog;
@@ -79,7 +79,7 @@ public class AddFoodActivity extends AppCompatActivity {
             binding.lnAddFood.edtAmount.setText(productUpdate.getRemainAmount()+"");
             binding.lnAddFood.edtDescp.setText(productUpdate.getDescription());
             binding.lnAddFood.edtPrice.setText(productUpdate.getProductPrice()+"");
-            if (productUpdate.getProductType().equals("Drink")) {
+            if (productUpdate.getProductType().equals("Balo")) {
                 binding.lnAddFood.rbDrink.setChecked(true);
             } else {
                 binding.lnAddFood.rbFood.setChecked(true);
@@ -386,6 +386,8 @@ public class AddFoodActivity extends AppCompatActivity {
         if (uri!=null) {
             FirebaseStorage storage=FirebaseStorage.getInstance();
             StorageReference reference= storage.getReference().child("Product Image").child(System.currentTimeMillis()+"");
+
+
             reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -399,7 +401,7 @@ public class AddFoodActivity extends AppCompatActivity {
                                 String amount=binding.lnAddFood.edtAmount.getText().toString();
                                 String description=binding.lnAddFood.edtDescp.getText().toString();
                                 Product tmp = new Product("null", name, img1, img2, img3, img4, Integer.valueOf(price),
-                                        binding.lnAddFood.rbFood.isChecked() ? "Food" : "Drink", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
+                                        binding.lnAddFood.rbFood.isChecked() ? "Technology Accessories" : "Balo", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
                                 uploadProduct(tmp);
                             } else {
                                 if (position==FIRST_IMAGE)  {
@@ -429,7 +431,7 @@ public class AddFoodActivity extends AppCompatActivity {
                 String amount=binding.lnAddFood.edtAmount.getText().toString();
                 String description=binding.lnAddFood.edtDescp.getText().toString();
                 Product tmp=new Product("null",name,img1,img2,img3,img4,Integer.valueOf(price),
-                        binding.lnAddFood.rbFood.isChecked()?"Food":"Drink", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
+                        binding.lnAddFood.rbFood.isChecked()?"Technology Accessories":"Balo", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
                 uploadProduct(tmp);
             }
         }

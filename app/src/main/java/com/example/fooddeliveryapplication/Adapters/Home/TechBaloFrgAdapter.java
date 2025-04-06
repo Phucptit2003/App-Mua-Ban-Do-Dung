@@ -22,14 +22,14 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class FoodDrinkFrgAdapter extends RecyclerView.Adapter {
+public class TechBaloFrgAdapter extends RecyclerView.Adapter {
     private final NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
     private final ArrayList<Product> ds;
     private final String userId;
     private String userName;
     private final Context mContext;
 
-    public FoodDrinkFrgAdapter(ArrayList<Product> ds, String id, Context context)
+    public TechBaloFrgAdapter(ArrayList<Product> ds, String id, Context context)
     {
         mContext = context;
         this.ds = ds;

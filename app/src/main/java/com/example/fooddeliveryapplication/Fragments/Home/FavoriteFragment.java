@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.example.fooddeliveryapplication.Adapters.Home.FavouriteFoodAdapter;
+import com.example.fooddeliveryapplication.Adapters.Home.FavouriteTechnologyAccessoryAdapter;
 import com.example.fooddeliveryapplication.Helpers.FirebaseFavouriteUserHelper;
 import com.example.fooddeliveryapplication.Model.Product;
 import com.example.fooddeliveryapplication.databinding.FragmentFavoriteBinding;
@@ -46,7 +46,7 @@ public class FavoriteFragment extends Fragment {
                 StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
                 binding.recFavouriteFood.setLayoutManager(layoutManager);
                 binding.recFavouriteFood.setHasFixedSize(true);
-                FavouriteFoodAdapter adapter = new FavouriteFoodAdapter(getContext(),favouriteProducts,userId);
+                FavouriteTechnologyAccessoryAdapter adapter = new FavouriteTechnologyAccessoryAdapter(getContext(),favouriteProducts,userId);
                 binding.recFavouriteFood.setAdapter(adapter);
                 binding.progressBarFavouriteList.setVisibility(View.GONE);
             }
