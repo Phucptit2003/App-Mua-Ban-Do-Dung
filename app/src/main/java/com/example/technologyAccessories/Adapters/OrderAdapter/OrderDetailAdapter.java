@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.fooddeliveryapplication.Model.BillInfo;
-import com.example.fooddeliveryapplication.Model.CurrencyFormatter;
-import com.example.fooddeliveryapplication.Model.Product;
-import com.example.fooddeliveryapplication.R;
-import com.example.fooddeliveryapplication.databinding.ItemBillinfoBinding;
+import com.example.technologyAccessories.Model.BillInfo;
+import com.example.technologyAccessories.Model.CurrencyFormatter;
+import com.example.technologyAccessories.Model.Product;
+import com.example.technologyAccessories.R;
+import com.example.technologyAccessories.databinding.ItemBillinfoBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;

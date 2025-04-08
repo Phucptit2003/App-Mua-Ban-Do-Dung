@@ -21,7 +21,6 @@ import androidx.core.app.ActivityCompat;
 import com.bumptech.glide.Glide;
 import com.example.technologyAccessories.CustomMessageBox.FailToast;
 import com.example.technologyAccessories.CustomMessageBox.SuccessfulToast;
-import com.example.technologyAccessories.Dialog.UploadDialog;
 import com.example.technologyAccessories.Model.Product;
 import com.example.technologyAccessories.R;
 import com.example.technologyAccessories.databinding.ActivityAddFoodBinding;

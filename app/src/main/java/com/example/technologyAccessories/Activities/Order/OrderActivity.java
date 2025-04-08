@@ -7,10 +7,10 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fooddeliveryapplication.Adapters.OrderAdapter.OrderViewPaperAdapter;
-import com.example.fooddeliveryapplication.Dialog.LoadingDialog;
-import com.example.fooddeliveryapplication.Model.Bill;
-import com.example.fooddeliveryapplication.databinding.ActivityOrderBinding;
+import com.example.technologyAccessories.Adapters.OrderAdapter.OrderViewPaperAdapter;
+import com.example.technologyAccessories.Dialog.LoadingDialog;
+import com.example.technologyAccessories.Model.Bill;
+import com.example.technologyAccessories.databinding.ActivityOrderBinding;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

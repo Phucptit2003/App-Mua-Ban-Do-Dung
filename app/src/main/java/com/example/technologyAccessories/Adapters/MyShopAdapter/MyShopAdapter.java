@@ -11,14 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.fooddeliveryapplication.Activities.MyShop.AddFoodActivity;
-import com.example.fooddeliveryapplication.Activities.ProductInformation.ProductInfoActivity;
-import com.example.fooddeliveryapplication.CustomMessageBox.CustomAlertDialog;
-import com.example.fooddeliveryapplication.CustomMessageBox.FailToast;
-import com.example.fooddeliveryapplication.CustomMessageBox.SuccessfulToast;
-import com.example.fooddeliveryapplication.Model.Product;
-import com.example.fooddeliveryapplication.R;
-import com.example.fooddeliveryapplication.databinding.LayoutFoodItemBinding;
+import com.example.technologyAccessories.Activities.MyShop.AddFoodActivity;
+import com.example.technologyAccessories.Activities.ProductInformation.ProductInfoActivity;
+import com.example.technologyAccessories.CustomMessageBox.CustomAlertDialog;
+import com.example.technologyAccessories.CustomMessageBox.FailToast;
+import com.example.technologyAccessories.CustomMessageBox.SuccessfulToast;
+import com.example.technologyAccessories.Model.Product;
+import com.example.technologyAccessories.R;
+import com.example.technologyAccessories.databinding.LayoutFoodItemBinding;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;

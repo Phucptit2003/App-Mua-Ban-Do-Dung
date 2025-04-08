@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fooddeliveryapplication.Activities.Order.OrderActivity;
-import com.example.fooddeliveryapplication.Adapters.OrderAdapter.OrderAdapter;
-import com.example.fooddeliveryapplication.Model.Bill;
-import com.example.fooddeliveryapplication.databinding.FragmentCurrentOrderBinding;
+import com.example.technologyAccessories.Activities.Order.OrderActivity;
+import com.example.technologyAccessories.Adapters.OrderAdapter.OrderAdapter;
+import com.example.technologyAccessories.Model.Bill;
+import com.example.technologyAccessories.databinding.FragmentCurrentOrderBinding;
 
 import java.util.ArrayList;
 
