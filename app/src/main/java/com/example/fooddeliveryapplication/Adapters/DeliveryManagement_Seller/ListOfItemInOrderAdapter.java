@@ -16,9 +16,7 @@ import com.example.fooddeliveryapplication.Model.Product;
 import com.example.fooddeliveryapplication.R;
 import com.example.fooddeliveryapplication.databinding.ItemOrderDetailListBinding;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class ListOfItemInOrderAdapter extends RecyclerView.Adapter<ListOfItemInOrderAdapter.ViewHolder> {
     private Context mContext;

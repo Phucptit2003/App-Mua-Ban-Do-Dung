@@ -2,13 +2,11 @@ package com.example.fooddeliveryapplication.Adapters.FeedbackAdapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,7 +18,6 @@ import com.example.fooddeliveryapplication.CustomMessageBox.FailToast;
 import com.example.fooddeliveryapplication.CustomMessageBox.SuccessfulToast;
 import com.example.fooddeliveryapplication.Dialog.UploadDialog;
 import com.example.fooddeliveryapplication.Helpers.FirebaseNotificationHelper;
-import com.example.fooddeliveryapplication.Helpers.FirebaseProductInfoHelper;
 import com.example.fooddeliveryapplication.Model.Bill;
 import com.example.fooddeliveryapplication.Model.BillInfo;
 import com.example.fooddeliveryapplication.Model.Comment;
@@ -34,7 +31,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 

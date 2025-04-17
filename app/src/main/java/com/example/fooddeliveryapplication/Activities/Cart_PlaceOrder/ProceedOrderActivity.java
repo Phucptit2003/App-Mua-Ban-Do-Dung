@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.fooddeliveryapplication.Activities.Home.HomeActivity;
 import com.example.fooddeliveryapplication.Adapters.Cart.OrderProductAdapter;

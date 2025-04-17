@@ -13,9 +13,7 @@ import com.example.fooddeliveryapplication.Helpers.FirebaseOrderDetailHelper;
 import com.example.fooddeliveryapplication.Model.BillInfo;
 import com.example.fooddeliveryapplication.databinding.ActivityDetailOfOrderDeliveryManagementBinding;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class DetailOfOrderDeliveryManagementActivity extends AppCompatActivity {
     private ActivityDetailOfOrderDeliveryManagementBinding binding;

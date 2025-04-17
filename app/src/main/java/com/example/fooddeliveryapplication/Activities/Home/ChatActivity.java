@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fooddeliveryapplication.Adapters.Home.ChatAdapter;
-import com.example.fooddeliveryapplication.CustomMessageBox.CustomAlertDialog;
 import com.example.fooddeliveryapplication.Model.ItemChatRoom;
 import com.example.fooddeliveryapplication.Model.Message;
 import com.example.fooddeliveryapplication.Model.User;

@@ -1,7 +1,5 @@
 package com.example.fooddeliveryapplication.Helpers;
 
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 
 import com.example.fooddeliveryapplication.Model.Bill;

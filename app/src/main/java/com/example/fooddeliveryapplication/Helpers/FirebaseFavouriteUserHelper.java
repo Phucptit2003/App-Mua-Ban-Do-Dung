@@ -3,14 +3,12 @@ package com.example.fooddeliveryapplication.Helpers;
 import androidx.annotation.NonNull;
 
 import com.example.fooddeliveryapplication.Model.Product;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class FirebaseFavouriteUserHelper {

@@ -3,7 +3,6 @@ package com.example.fooddeliveryapplication.Activities.Home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ChatDetailActivity extends AppCompatActivity {
     private ActivityChatDetailBinding binding;

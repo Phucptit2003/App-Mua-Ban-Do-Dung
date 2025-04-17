@@ -7,14 +7,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.fooddeliveryapplication.Activities.Order.OrderDetailActivity;
 import com.example.fooddeliveryapplication.Adapters.DeliveryManagement_Seller.StatusManagementPagerAdapter;
-import com.example.fooddeliveryapplication.Helpers.FirebaseNotificationHelper;
 import com.example.fooddeliveryapplication.Model.Notification;
 import com.example.fooddeliveryapplication.databinding.ActivityDeliveryManagementBinding;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.List;
 
 public class DeliveryManagementActivity extends AppCompatActivity {
     private ActivityDeliveryManagementBinding binding;

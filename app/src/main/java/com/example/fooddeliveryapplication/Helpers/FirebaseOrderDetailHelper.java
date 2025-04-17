@@ -2,7 +2,6 @@ package com.example.fooddeliveryapplication.Helpers;
 
 import androidx.annotation.NonNull;
 
-import com.example.fooddeliveryapplication.Model.Bill;
 import com.example.fooddeliveryapplication.Model.BillInfo;
 import com.example.fooddeliveryapplication.Model.Product;
 import com.google.firebase.database.DataSnapshot;

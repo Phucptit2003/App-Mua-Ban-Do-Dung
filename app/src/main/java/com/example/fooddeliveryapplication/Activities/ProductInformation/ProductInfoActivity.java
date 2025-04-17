@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.fooddeliveryapplication.Activities.Home.ChatDetailActivity;
 import com.example.fooddeliveryapplication.Activities.MyShop.AddFoodActivity;
-import com.example.fooddeliveryapplication.Activities.Order.OrderDetailActivity;
 import com.example.fooddeliveryapplication.Adapters.ProductInfomation.CommentRecyclerViewAdapter;
 import com.example.fooddeliveryapplication.Adapters.ProductInfomation.ProductInfoImageAdapter;
 import com.example.fooddeliveryapplication.CustomMessageBox.FailToast;
@@ -26,14 +25,11 @@ import com.example.fooddeliveryapplication.Model.Comment;
 import com.example.fooddeliveryapplication.Model.CurrencyFormatter;
 import com.example.fooddeliveryapplication.Model.Notification;
 import com.example.fooddeliveryapplication.Model.Product;
-import com.example.fooddeliveryapplication.R;
 import com.example.fooddeliveryapplication.databinding.ActivityProductInfoBinding;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,8 @@
 package com.example.fooddeliveryapplication.Activities.Home;
 
-import static android.icu.util.ULocale.getName;
-
 import android.Manifest;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,14 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
@@ -36,9 +25,6 @@ import com.example.fooddeliveryapplication.Activities.Cart_PlaceOrder.CartActivi
 import com.example.fooddeliveryapplication.Activities.Cart_PlaceOrder.EmptyCartActivity;
 import com.example.fooddeliveryapplication.Activities.MyShop.MyShopActivity;
 import com.example.fooddeliveryapplication.Activities.Order.OrderActivity;
-import com.example.fooddeliveryapplication.Activities.Order.OrderDetailActivity;
-import com.example.fooddeliveryapplication.Activities.OrderSellerManagement.DeliveryManagementActivity;
-import com.example.fooddeliveryapplication.Activities.ProductInformation.ProductInfoActivity;
 import com.example.fooddeliveryapplication.CustomMessageBox.CustomAlertDialog;
 import com.example.fooddeliveryapplication.CustomMessageBox.SuccessfulToast;
 import com.example.fooddeliveryapplication.Fragments.Home.FavoriteFragment;
@@ -46,12 +32,9 @@ import com.example.fooddeliveryapplication.Fragments.Home.HomeFragment;
 import com.example.fooddeliveryapplication.Fragments.NotificationFragment;
 import com.example.fooddeliveryapplication.Helpers.FirebaseNotificationHelper;
 import com.example.fooddeliveryapplication.Helpers.FirebaseProductHelper;
-import com.example.fooddeliveryapplication.Helpers.FirebaseProductInfoHelper;
 import com.example.fooddeliveryapplication.Helpers.FirebaseUserInfoHelper;
-import com.example.fooddeliveryapplication.Model.Bill;
 import com.example.fooddeliveryapplication.Model.Cart;
 import com.example.fooddeliveryapplication.Model.Notification;
-import com.example.fooddeliveryapplication.Model.Product;
 import com.example.fooddeliveryapplication.Model.User;
 import com.example.fooddeliveryapplication.R;
 import com.example.fooddeliveryapplication.databinding.ActivityHomeBinding;
