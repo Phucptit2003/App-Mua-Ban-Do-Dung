@@ -1,16 +1,15 @@
 {
   "project_info": {
     "project_number": "995354386464",
-    "firebase_url": "https://clone-6345a-default-rtdb.firebaseio.com",
     "project_id": "clone-6345a",
     "storage_bucket": "clone-6345a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:995354386464:android:2b1543a6c0b5b222331c45",
+        "mobilesdk_app_id": "1:995354386464:android:fc48e04c66556ab2331c45",
         "android_client_info": {
-          "package_name": "com.example.app"
+          "package_name": "com.example.fooddeliveryapplication"
         }
       },
       "oauth_client": [],
