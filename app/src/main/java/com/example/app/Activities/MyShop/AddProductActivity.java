@@ -24,6 +24,7 @@ import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.Model.Product;
 import com.example.app.R;
 import com.example.app.databinding.ActivityAddFoodBinding;
+import com.example.fooddeliveryapplication.Dialog.UploadDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -40,7 +41,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class AddFoodActivity extends AppCompatActivity {
+public class AddProductActivity extends AppCompatActivity {
     private ActivityAddFoodBinding binding;
     private String TAG="Add Food";
     private int position;
@@ -171,7 +172,7 @@ public class AddFoodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (checkLoi()) {
-                    uploadDialog = new UploadDialog(AddFoodActivity.this);
+                    uploadDialog = new UploadDialog(AddProductActivity.this);
                     uploadDialog.show();
                     uploadImage(FIRST_IMAGE);
                 }
@@ -195,13 +196,13 @@ public class AddFoodActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         if (position == FOURTH_IMAGE) {
                             uploadDialog.dismiss();
-                            new SuccessfulToast(AddFoodActivity.this, "Delete old image successfully!").showToast();
+                            new SuccessfulToast(AddProductActivity.this, "Delete old image successfully!").showToast();
                             finish();
                         } else {
                             deleteOldImage(position+1);
                         }
                     } else {
-                        new FailToast(AddFoodActivity.this, "Error delete image: " + imageURL).showToast();
+                        new FailToast(AddProductActivity.this, "Error delete image: " + imageURL).showToast();
                     }
                 }
             });
@@ -210,7 +211,7 @@ public class AddFoodActivity extends AppCompatActivity {
                 deleteOldImage(position + 1);
             } else {
                 uploadDialog.dismiss();
-                new SuccessfulToast(AddFoodActivity.this, "Delete old image successfully!").showToast();
+                new SuccessfulToast(AddProductActivity.this, "Delete old image successfully!").showToast();
                 finish();
             }
         }
@@ -249,13 +250,13 @@ public class AddFoodActivity extends AppCompatActivity {
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                        new FailToast(AddFoodActivity.this, "Permission denied!").showToast();
+                        new FailToast(AddProductActivity.this, "Permission denied!").showToast();
                     }
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
                         permissionToken.continuePermissionRequest();
-                        new FailToast(AddFoodActivity.this, "Permission denied!").showToast();
+                        new FailToast(AddProductActivity.this, "Permission denied!").showToast();
 
                     }
                 }).check();
@@ -306,7 +307,7 @@ public class AddFoodActivity extends AppCompatActivity {
     }
 
     public AlertDialog.Builder createDialog(String content) {
-        AlertDialog.Builder builder=new AlertDialog.Builder(AddFoodActivity.this);
+        AlertDialog.Builder builder=new AlertDialog.Builder(AddProductActivity.this);
         builder.setTitle("Thông báo");
         builder.setMessage(content);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -340,11 +341,11 @@ public class AddFoodActivity extends AppCompatActivity {
                                 }
 
                                 uploadDialog.dismiss();
-                                new SuccessfulToast(AddFoodActivity.this, "Update successfully!").showToast();
+                                new SuccessfulToast(AddProductActivity.this, "Update successfully!").showToast();
                                 finish();
                             } else {
                                 uploadDialog.dismiss();
-                                new FailToast(AddFoodActivity.this, "Some errors occurred!").showToast();
+                                new FailToast(AddProductActivity.this, "Some errors occurred!").showToast();
                                 finish();
                             }
                         }
@@ -359,10 +360,10 @@ public class AddFoodActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         uploadDialog.dismiss();
                         finish();
-                        new SuccessfulToast(AddFoodActivity.this, "Add product successfully!").showToast();
+                        new SuccessfulToast(AddProductActivity.this, "Add product successfully!").showToast();
                     } else {
                         uploadDialog.dismiss();
-                        new FailToast(AddFoodActivity.this, "Some error occurred!").showToast();
+                        new FailToast(AddProductActivity.this, "Some error occurred!").showToast();
                         Log.e(TAG,"Lỗi thêm sản phẩm");
                     }
                 }
@@ -539,7 +540,7 @@ public class AddFoodActivity extends AppCompatActivity {
     }
 
     private void requestRuntimePermission() {
-        ActivityCompat.requestPermissions(AddFoodActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE
+        ActivityCompat.requestPermissions(AddProductActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE
         },PERMISSION_REQUEST_CODE);
     }
 
