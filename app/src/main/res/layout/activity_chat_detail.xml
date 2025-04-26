@@ -7,7 +7,7 @@
     android:background="#E8584D"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context="com.example.fooddeliveryapplication.Activities.Home.ChatDetailActivity">
+    tools:context="app.Activities.Home.ChatDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

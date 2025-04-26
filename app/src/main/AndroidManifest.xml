@@ -2,7 +2,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.fooddeliveryapplication">
+    package="com.example.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,80 +19,80 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/App"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDeliveryApplication"
         tools:targetApi="31" >
         <activity
-            android:name=".Activities.OrderSellerManagement.DeliveryManagementActivity"
+            android:name="com.example.app.Activities.OrderSellerManagement.DeliveryManagementActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.ForgotActivity"
+            android:name="com.example.app.Activities.Home.ForgotActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.MyShop.MyFoodActivity"
+            android:name="com.example.app.Activities.MyShop.MyFoodActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.MyShop.AddFoodActivity"
+            android:name="com.example.app.Activities.MyShop.AddFoodActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Feedback.FeedBackActivity"
+            android:name="com.example.app.Activities.Feedback.FeedBackActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Order.OrderActivity"
+            android:name="com.example.app.Activities.Order.OrderActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.MyShop.MyShopActivity"
+            android:name="com.example.app.Activities.MyShop.MyShopActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Order.OrderDetailActivity"
+            android:name="com.example.app.Activities.Order.OrderDetailActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.ProfileActivity"
+            android:name="com.example.app.Activities.Home.ProfileActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cart_PlaceOrder.UpdateAddAddressActivity"
+            android:name="com.example.app.Activities.Cart_PlaceOrder.UpdateAddAddressActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cart_PlaceOrder.ChangeAddressActivity"
+            android:name="com.example.app.Activities.Cart_PlaceOrder.ChangeAddressActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cart_PlaceOrder.EmptyCartActivity"
+            android:name="com.example.app.Activities.Cart_PlaceOrder.EmptyCartActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cart_PlaceOrder.ProceedOrderActivity"
+            android:name="com.example.app.Activities.Cart_PlaceOrder.ProceedOrderActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cart_PlaceOrder.CartActivity"
+            android:name="com.example.app.Activities.Cart_PlaceOrder.CartActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.EditProfileActivity"
+            android:name="com.example.app.Activities.Home.EditProfileActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.FindActivity"
+            android:name="com.example.app.Activities.Home.FindActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.LoginActivity"
+            android:name="com.example.app.Activities.Home.LoginActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.IntroActivity"
+            android:name="com.example.app.Activities.Home.IntroActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true" >
             <intent-filter>
@@ -101,16 +101,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.Home.HomeActivity"
+            android:name="com.example.app.Activities.Home.HomeActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" >
         </activity>
         <activity
-            android:name=".Activities.OrderSellerManagement.DetailOfOrderDeliveryManagementActivity"
+            android:name="com.example.app.Activities.OrderSellerManagement.DetailOfOrderDeliveryManagementActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.ProductInformation.ProductInfoActivity"
+            android:name="com.example.app.Activities.ProductInformation.ProductInfoActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
 
@@ -118,11 +118,11 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <activity
-            android:name=".Activities.Home.ChatDetailActivity"
+            android:name="com.example.app.Activities.Home.ChatDetailActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home.ChatActivity"
+            android:name="com.example.app.Activities.Home.ChatActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
     </application>
