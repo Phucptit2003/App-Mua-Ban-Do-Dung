@@ -2,8 +2,7 @@ package com.example.app.Helper;
 
 import androidx.annotation.NonNull;
 
-import com.example.fooddeliveryapplication.Model.Cart;
-import com.example.fooddeliveryapplication.Model.CartInfo;
+import com.example.app.Model.Cart;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
