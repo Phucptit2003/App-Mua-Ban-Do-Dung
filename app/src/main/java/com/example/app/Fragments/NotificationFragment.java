@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.app.Helpers.FirebaseNotificationHelper;
 import com.example.app.databinding.FragmentNotificationBinding;
 
 import java.util.List;
