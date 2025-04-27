@@ -30,7 +30,6 @@ import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.Fragments.Home.FavoriteFragment;
 import com.example.app.Fragments.Home.HomeFragment;
 import com.example.app.Fragments.NotificationFragment;
-import com.example.app.Helpers.FirebaseNotificationHelper;
 import com.example.app.Helpers.FirebaseProductHelper;
 import com.example.app.Helpers.FirebaseUserInfoHelper;
 import com.example.app.Model.Cart;
