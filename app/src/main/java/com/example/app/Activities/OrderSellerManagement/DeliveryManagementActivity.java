@@ -1,5 +1,8 @@
 package com.example.app.Activities.OrderSellerManagement;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
