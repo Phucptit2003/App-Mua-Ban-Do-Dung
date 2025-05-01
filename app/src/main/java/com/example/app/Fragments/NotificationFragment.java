@@ -1,4 +1,4 @@
-package com.example.app.Fragments;
+package com.example.fooddeliveryapplication.Fragments;
 
 import android.os.Bundle;
 
