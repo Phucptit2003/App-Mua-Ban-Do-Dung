@@ -77,7 +77,7 @@
                 android:id="@+id/product_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Food name"
+                android:text="Technology Accessories name"
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:maxLines="1"

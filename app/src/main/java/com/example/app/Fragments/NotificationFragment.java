@@ -1,12 +1,13 @@
 package com.example.app.Fragments;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.app.Adapters.NotificationListAdapter;
 import com.example.app.Helpers.FirebaseNotificationHelper;
