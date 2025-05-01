@@ -49,7 +49,7 @@ public class MyFoodActivity extends AppCompatActivity {
         binding.flpAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MyFoodActivity.this, AddProductActivity.class);
+                Intent intent=new Intent(MyFoodActivity.this,AddFoodActivity.class);
                 intent.putExtra("userId",userId);
                 startActivity(intent);
             }
@@ -75,7 +75,7 @@ public class MyFoodActivity extends AppCompatActivity {
                 }
                 dialog.dismiss();
                 adapter.notifyDataSetChanged();
-             }
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
