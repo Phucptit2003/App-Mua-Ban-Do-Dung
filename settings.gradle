@@ -4,7 +4,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         jcenter()
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://jitpack.io' } // ✅ Đảm bảo có dòng này
     }
 }
 dependencyResolutionManagement {
@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://jitpack.io' } // ✅ Kiểm tra lại
     }
 }
 

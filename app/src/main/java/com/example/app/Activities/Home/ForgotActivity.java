@@ -1,11 +1,11 @@
 package com.example.app.Activities.Home;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;

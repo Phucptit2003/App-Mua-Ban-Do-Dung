@@ -78,7 +78,7 @@
                             android:layout_marginEnd="50dp"
                             android:checked="true"
                             android:fontFamily="@font/sfpro_bold"
-                            android:text="Food"
+                            android:text="Tech Accessory"
                             android:textColorHighlight="#FFEDCC" />
 
                         <RadioButton
@@ -86,7 +86,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/sfpro_bold"
-                            android:text="Drink" />
+                            android:text="Balo" />
                     </RadioGroup>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -158,7 +158,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="50dp"
-                    android:text="Add Food"
+                    android:text="Add Technology Accessories"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"/>
 

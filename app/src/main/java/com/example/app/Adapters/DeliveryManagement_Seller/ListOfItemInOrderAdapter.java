@@ -29,11 +29,11 @@ public class ListOfItemInOrderAdapter extends RecyclerView.Adapter<ListOfItemInO
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(ItemOrderDetailListBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new ListOfItemInOrderAdapter.ViewHolder(ItemOrderDetailListBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListOfItemInOrderAdapter.ViewHolder holder, int position) {
         BillInfo billInfo = billInfos.get(position);
 
         new FirebaseOrderDetailHelper().readProductInfo(billInfo.getProductId(), new FirebaseOrderDetailHelper.DataStatus2() {
