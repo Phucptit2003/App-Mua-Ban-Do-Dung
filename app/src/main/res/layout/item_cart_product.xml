@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <!-- Layout chứa các nút khi vuốt -->
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/like"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_button"
+            android:src="@drawable/ic_like"/>
+
+        <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/circle_button"
+            android:src="@drawable/ic_delete"/>
+    </LinearLayout>
+
+    <!-- CardView chứa nội dung chính -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="2dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!-- Ảnh sản phẩm -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/product_image_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@mipmap/ic_launcher"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Thông tin sản phẩm -->
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Food name"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintStart_toEndOf="@id/product_image_container"
+                app:layout_constraintTop_toTopOf="@id/product_image_container"
+                app:layout_constraintEnd_toStartOf="@id/check_box"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,000"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/product_name"
+                app:layout_constraintTop_toBottomOf="@id/product_name"
+                android:layout_marginTop="5dp"/>
+
+            <!-- Checkbox chọn sản phẩm -->
+            <CheckBox
+                android:id="@+id/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Nút tăng/giảm số lượng -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_price"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/subtract"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:text="-"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_button_left"/>
+
+                <TextView
+                    android:id="@+id/product_amount"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="14sp"
+                    android:background="@drawable/normal_button"/>
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:text="+"
+                    android:textSize="12sp"
+                    android:background="@drawable/rounded_button_right"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

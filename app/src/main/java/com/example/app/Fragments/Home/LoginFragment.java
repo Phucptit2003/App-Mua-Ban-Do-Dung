@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.app.Activities.Home.ForgotActivity;
+import com.example.app.Activities.Home.HomeActivity;
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.R;

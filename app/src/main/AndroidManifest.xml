@@ -18,10 +18,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodDeliveryApplication"
+        android:theme="@style/Theme.Application"
         tools:targetApi="31" >
         <activity
             android:name=".Activities.OrderSellerManagement.DeliveryManagementActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Home.ForgotActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
@@ -77,6 +81,10 @@
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
+            android:name=".Activities.Home.FindActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
+        <activity
             android:name=".Activities.Home.LoginActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
@@ -90,6 +98,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activities.Home.HomeActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" >
+        </activity>
+        <activity
             android:name=".Activities.OrderSellerManagement.DetailOfOrderDeliveryManagementActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
@@ -101,6 +114,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".Activities.Home.ChatDetailActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Home.ChatActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
     </application>
 
 </manifest>
