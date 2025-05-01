@@ -26,7 +26,7 @@ public class FirebaseUserInfoHelper {
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference();
     }
-    public void readUserInfo(String userId, final FirebaseUserInfoHelper.DataStatus dataStatus)
+    public void readUserInfo(String userId, final DataStatus dataStatus)
     {
         mReference.child("Users").child(userId).addValueEventListener(new ValueEventListener() {
             @Override

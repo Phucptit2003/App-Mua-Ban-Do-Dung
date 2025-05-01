@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication.Fragments.Home;
+package com.example.app.Fragments.Home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+<<<<<<<< HEAD:app/src/main/java/com/example/app/Fragments/Home/LoginFragment.java
+import com.example.app.Activities.Home.ForgotActivity;
+import com.example.app.CustomMessageBox.FailToast;
+import com.example.app.CustomMessageBox.SuccessfulToast;
+import com.example.app.R;
+import com.example.app.databinding.FragmentLoginBinding;
+========
 import com.example.fooddeliveryapplication.Activities.Home.ForgotActivity;
 import com.example.fooddeliveryapplication.Activities.Home.HomeActivity;
 import com.example.fooddeliveryapplication.CustomMessageBox.FailToast;
 import com.example.fooddeliveryapplication.CustomMessageBox.SuccessfulToast;
 import com.example.fooddeliveryapplication.R;
 import com.example.fooddeliveryapplication.databinding.FragmentLoginBinding;
+>>>>>>>> 1fd656a7874625cd0d50becca63eaf32efded440:app/src/main/java/com/example/technologyAccessories/Fragments/Home/LoginFragment.java
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

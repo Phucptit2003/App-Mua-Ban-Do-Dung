@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication;
+package com.example.app;
 
 public class GlobalConfig {
     public static String choseAddressId;

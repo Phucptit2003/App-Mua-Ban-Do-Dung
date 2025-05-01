@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication.Model;
+package com.example.app.Model;
 
 import java.io.Serializable;
 

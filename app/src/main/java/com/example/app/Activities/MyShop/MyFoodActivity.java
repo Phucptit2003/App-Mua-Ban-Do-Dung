@@ -75,7 +75,7 @@ public class MyFoodActivity extends AppCompatActivity {
                 }
                 dialog.dismiss();
                 adapter.notifyDataSetChanged();
-             }
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
