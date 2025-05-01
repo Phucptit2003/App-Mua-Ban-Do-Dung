@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.Dialog.LoadingDialog;
+import com.example.app.Model.Cart;
 import com.example.app.Model.User;
 import com.example.app.databinding.FragmentSignUpBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class SignUpFragment extends Fragment {
