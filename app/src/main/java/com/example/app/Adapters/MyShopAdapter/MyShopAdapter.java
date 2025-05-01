@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.app.Activities.MyShop.AddProductActivity;
+import com.example.app.Activities.MyShop.AddFoodActivity;
 import com.example.app.Activities.ProductInformation.ProductInfoActivity;
 import com.example.app.CustomMessageBox.CustomAlertDialog;
 import com.example.app.CustomMessageBox.FailToast;
@@ -79,7 +79,7 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.ViewHolder
 
         // Xử lý sự kiện chỉnh sửa sản phẩm
         holder.binding.imgEdit.setOnClickListener(view -> {
-            Intent intent = new Intent(context, AddProductActivity.class);
+            Intent intent = new Intent(context, AddFoodActivity.class);
             intent.putExtra("Product updating", product);
             context.startActivity(intent);
         });

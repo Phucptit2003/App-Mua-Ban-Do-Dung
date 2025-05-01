@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication.Fragments.Home;
+package com.example.app.Fragments.Home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,13 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+<<<<<<<< HEAD:app/src/main/java/com/example/app/Fragments/Home/HomeFragment.java
+import com.example.app.databinding.FragmentHomeBinding;
+========
 import com.example.fooddeliveryapplication.Activities.Home.FindActivity;
 import com.example.fooddeliveryapplication.Adapters.Home.FoodDrinkAdapter;
 import com.example.fooddeliveryapplication.databinding.FragmentHomeBinding;
+>>>>>>>> 1fd656a7874625cd0d50becca63eaf32efded440:app/src/main/java/com/example/technologyAccessories/Fragments/Home/HomeFragment.java
 
 import com.google.android.material.tabs.TabLayoutMediator;
 
