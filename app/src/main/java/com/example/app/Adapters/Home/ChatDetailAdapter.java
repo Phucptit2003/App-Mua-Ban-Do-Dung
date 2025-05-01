@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.app.Model.Message;
 import com.example.app.databinding.ItemReceiveMessageBinding;
 import com.example.app.databinding.ItemSendMessageBinding;
 

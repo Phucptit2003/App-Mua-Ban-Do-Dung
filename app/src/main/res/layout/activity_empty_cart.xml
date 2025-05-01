@@ -18,7 +18,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
         android:layout_below="@+id/toolbar"
-        android:src="@drawable/cat_2"
+        android:src="@drawable/img"
         android:id="@+id/image"/>
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/damion"
-        android:text="Hungry now, pick some food"
+        android:text="Shop now, pick some thing!"
         android:textColor="@color/app_color2"
         android:textSize="28sp"
         android:textStyle="bold" />

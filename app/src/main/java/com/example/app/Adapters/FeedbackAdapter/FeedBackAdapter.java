@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.app.Activities.Feedback.FeedBackActivity;
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;
+import com.example.app.Dialog.UploadDialog;
 import com.example.app.Helpers.FirebaseNotificationHelper;
 import com.example.app.Model.Bill;
 import com.example.app.Model.BillInfo;
@@ -43,7 +44,7 @@ public class FeedBackAdapter extends RecyclerView.Adapter<FeedBackAdapter.ViewHo
     private final String userId;
 
     //Contructor
-    public FeedBackAdapter(Context mContext, ArrayList<BillInfo> ds, Bill currentBill, String id) {
+    public FeedBackAdapter(Context mContext, ArrayList<BillInfo> ds, Bill currentBill,String id) {
         this.mContext = mContext;
         this.ds = ds;
         this.currentBill = currentBill;
@@ -52,12 +53,12 @@ public class FeedBackAdapter extends RecyclerView.Adapter<FeedBackAdapter.ViewHo
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutFeedbackBillifoBinding.inflate(LayoutInflater.from(mContext), parent, false));
+    public FeedBackAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new FeedBackAdapter.ViewHolder(LayoutFeedbackBillifoBinding.inflate(LayoutInflater.from(mContext), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FeedBackAdapter.ViewHolder holder, int position) {
         BillInfo item=ds.get(position);
 
         holder.binding.edtComment.setText("");
