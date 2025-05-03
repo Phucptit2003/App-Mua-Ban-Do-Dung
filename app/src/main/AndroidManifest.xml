@@ -18,7 +18,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Application"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31" >
         <activity
             android:name=".Activities.OrderSellerManagement.DeliveryManagementActivity"
@@ -33,7 +33,7 @@
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
-            android:name=".Activities.MyShop.AddFoodActivity"
+            android:name=".Activities.MyShop.AddProductActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
