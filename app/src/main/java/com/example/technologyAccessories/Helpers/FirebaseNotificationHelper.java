@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication.Helpers;
+package com.example.technologyAccessories.Helpers;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -13,15 +13,15 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
-import com.example.fooddeliveryapplication.Activities.Home.ChatDetailActivity;
-import com.example.fooddeliveryapplication.Activities.Order.OrderDetailActivity;
-import com.example.fooddeliveryapplication.Activities.OrderSellerManagement.DeliveryManagementActivity;
-import com.example.fooddeliveryapplication.Activities.ProductInformation.ProductInfoActivity;
-import com.example.fooddeliveryapplication.Model.Bill;
-import com.example.fooddeliveryapplication.Model.Notification;
-import com.example.fooddeliveryapplication.Model.Product;
-import com.example.fooddeliveryapplication.Model.User;
-import com.example.fooddeliveryapplication.R;
+import com.example.app.Activities.Home.ChatDetailActivity;
+import com.example.app.Activities.Order.OrderDetailActivity;
+import com.example.app.Activities.OrderSellerManagement.DeliveryManagementActivity;
+import com.example.app.Activities.ProductInformation.ProductInfoActivity;
+import com.example.app.Model.Bill;
+import com.example.app.Model.Notification;
+import com.example.app.Model.Product;
+import com.example.app.Model.User;
+import com.example.app.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

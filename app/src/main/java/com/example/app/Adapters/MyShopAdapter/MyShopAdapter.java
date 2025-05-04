@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.app.Activities.MyShop.AddFoodActivity;
 import com.example.app.Activities.ProductInformation.ProductInfoActivity;
 import com.example.app.CustomMessageBox.CustomAlertDialog;
 import com.example.app.CustomMessageBox.FailToast;

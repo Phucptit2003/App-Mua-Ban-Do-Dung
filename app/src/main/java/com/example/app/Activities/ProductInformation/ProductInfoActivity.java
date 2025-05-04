@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.app.Activities.Home.ChatDetailActivity;
-import com.example.app.Activities.MyShop.AddFoodActivity;
 import com.example.app.Adapters.ProductInfomation.CommentRecyclerViewAdapter;
 import com.example.app.Adapters.ProductInfomation.ProductInfoImageAdapter;
 import com.example.app.CustomMessageBox.FailToast;
