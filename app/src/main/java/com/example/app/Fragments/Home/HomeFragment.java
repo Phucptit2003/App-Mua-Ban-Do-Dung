@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
 
     private void initUI() {
         //Set adapter cho recycleView
-        FoodDrinkAdapter adapter1=new FoodDrinkAdapter(HomeFragment.this, userId);
+        TechBaloAdapter adapter1=new TechBaloAdapter(HomeFragment.this, userId);
         binding.viewpaperHome.setAdapter(adapter1);
         binding.viewpaperHome.setUserInputEnabled(false);
         binding.layoutSearchView.setOnClickListener(new View.OnClickListener() {
@@ -46,14 +46,13 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        //Tạo Tab
         new TabLayoutMediator(binding.tabHome,binding.viewpaperHome, ((tab, position) -> {
             switch (position) {
                 case 0:
-                    tab.setText("Food");
+                    tab.setText("Technology Accessories");
                     break;
                 case 1:
-                    tab.setText("Drink");
+                    tab.setText("Balo");
                     break;
             }
         })).attach();
