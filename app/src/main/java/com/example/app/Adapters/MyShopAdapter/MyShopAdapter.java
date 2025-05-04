@@ -79,7 +79,7 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.ViewHolder
 
         // Xử lý sự kiện chỉnh sửa sản phẩm
         holder.binding.imgEdit.setOnClickListener(view -> {
-            Intent intent = new Intent(context, AddFoodActivity.class);
+            Intent intent = new Intent(context, AddProductActivity.class);
             intent.putExtra("Product updating", product);
             context.startActivity(intent);
         });
