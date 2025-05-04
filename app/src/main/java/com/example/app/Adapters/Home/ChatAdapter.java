@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.app.Activities.Home.ChatDetailActivity;
+import com.example.app.Model.ItemChatRoom;
 import com.example.app.R;
 import com.example.app.databinding.ItemChatBinding;
 import com.google.firebase.auth.FirebaseAuth;

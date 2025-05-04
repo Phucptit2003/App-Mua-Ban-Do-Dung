@@ -61,7 +61,6 @@ public class FirebaseOrderDetailHelper {
         });
     }
 
-    public void readProductInfo(String productId, final DataStatus2 dataStatus)
     {
         mReferenceStatusOrder.addValueEventListener(new ValueEventListener() {
             @Override

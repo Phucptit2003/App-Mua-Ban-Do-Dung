@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.app.Adapters.Home.FoodDrinkAdapter;
+import com.example.app.Activities.Home.FindActivity;
+import com.example.app.Adapters.Home.TechBaloAdapter;
 import com.example.app.databinding.FragmentHomeBinding;
 
 import com.google.android.material.tabs.TabLayoutMediator;
