@@ -21,42 +21,6 @@
         android:theme="@style/Theme.Application"
         tools:targetApi="31" >
         <activity
-            android:name=".Activities.OrderSellerManagement.DeliveryManagementActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.Home.ForgotActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.MyShop.MyFoodActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.MyShop.AddFoodActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.Feedback.FeedBackActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.Order.OrderActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.MyShop.MyShopActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.Order.OrderDetailActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.Home.ProfileActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
-        <activity
             android:name=".Activities.Cart_PlaceOrder.UpdateAddAddressActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="false" />
