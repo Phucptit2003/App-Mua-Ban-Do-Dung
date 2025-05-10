@@ -1,13 +1,11 @@
 package com.example.app.Adapters.DeliveryManagement_Seller;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +18,9 @@ import com.example.app.Helpers.FirebaseStatusOrderHelper;
 import com.example.app.Model.Bill;
 import com.example.app.Model.Notification;
 import com.example.app.databinding.ItemOrderStatusListBinding;
+
+import android.content.Context;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class StatusOrderRecyclerViewAdapter extends RecyclerView.Adapter<StatusO
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(ItemOrderStatusListBinding.inflate(LayoutInflater.from(mContext), parent, false));
+        return new StatusOrderRecyclerViewAdapter.ViewHolder(ItemOrderStatusListBinding.inflate(LayoutInflater.from(mContext), parent, false));
     }
 
     @SuppressLint("ResourceAsColor")

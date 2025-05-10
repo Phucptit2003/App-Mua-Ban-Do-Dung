@@ -1,10 +1,10 @@
 package com.example.app.Activities.Cart_PlaceOrder;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app.databinding.ActivityEmptyCartBinding;
 

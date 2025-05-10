@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.app.Model.CartInfo;
 import com.example.app.Model.Product;
 import com.example.app.R;
 import com.example.app.databinding.ItemOrderProductBinding;
