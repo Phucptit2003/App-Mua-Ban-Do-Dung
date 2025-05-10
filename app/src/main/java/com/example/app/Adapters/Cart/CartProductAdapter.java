@@ -20,6 +20,8 @@ import com.example.app.Helpers.FirebaseProductInfoHelper;
 import com.example.app.Helpers.FirebaseUserInfoHelper;
 import com.example.app.Interfaces.IAdapterItemListener;
 import com.example.app.Model.Cart;
+import com.example.app.Model.CartInfo;
+import com.example.app.Model.Notification;
 import com.example.app.Model.Product;
 import com.example.app.Model.User;
 import com.example.app.R;

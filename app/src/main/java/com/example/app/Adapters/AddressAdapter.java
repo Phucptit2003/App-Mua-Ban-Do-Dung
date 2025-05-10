@@ -11,13 +11,13 @@ import android.widget.RadioButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.app.Activities.Cart_PlaceOrder.UpdateAddAddressActivity;
 import com.example.app.CustomMessageBox.CustomAlertDialog;
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.GlobalConfig;
 import com.example.app.Interfaces.IAddressAdapterListener;
 import com.example.app.Model.Address;
+import com.example.app.Activities.Cart_PlaceOrder.UpdateAddAddressActivity;
 import com.example.app.databinding.ItemAddressBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,12 +42,12 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(ItemAddressBinding.inflate(LayoutInflater.from(mContext), parent, false));
+    public AddressAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new AddressAdapter.ViewHolder(ItemAddressBinding.inflate(LayoutInflater.from(mContext), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AddressAdapter.ViewHolder holder, int position) {
         Address address = mAddresses.get(position);
 
         if (address.getAddressId().equals(GlobalConfig.choseAddressId) && address.getState().equals("default")) {
