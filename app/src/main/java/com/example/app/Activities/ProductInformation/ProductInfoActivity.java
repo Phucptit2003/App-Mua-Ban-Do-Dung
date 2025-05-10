@@ -171,10 +171,8 @@ public class ProductInfoActivity extends AppCompatActivity {
             }
         });
 
-        // set Adapter for comment recycler view
         setCommentRecView();
 
-        // load data favourite
         loadDataFavourite();
 
 
