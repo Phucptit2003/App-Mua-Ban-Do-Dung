@@ -74,7 +74,7 @@ public class DetailOfOrderDeliveryManagementActivity extends AppCompatActivity {
 
             }
         }
-        
+
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

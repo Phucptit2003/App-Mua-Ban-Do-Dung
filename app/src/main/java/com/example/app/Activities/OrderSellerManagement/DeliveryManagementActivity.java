@@ -7,9 +7,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import com.example.app.Adapters.DeliveryManagement_Seller.StatusManagementPagerAdapter;
 import com.example.app.Model.Notification;
 import com.example.app.databinding.ActivityDeliveryManagementBinding;
