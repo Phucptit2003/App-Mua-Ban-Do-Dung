@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.app.Adapters.MyShopAdapter.MyShopAdapter;
 import com.example.app.Dialog.LoadingDialog;
 import com.example.app.Model.Product;
-import com.example.app.databinding.ActivityMyFoodBinding;
+import com.example.app.databinding.ActivityMyProductsBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,22 +21,22 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MyFoodActivity extends AppCompatActivity {
-    private ActivityMyFoodBinding binding;
+public class MyProductActivity extends AppCompatActivity {
+    private ActivityMyProductsBinding binding;
     private ArrayList<Product> ds=new ArrayList<>();
     private MyShopAdapter adapter;
     private String userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMyFoodBinding.inflate(getLayoutInflater());
+        binding = ActivityMyProductsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getWindow().setStatusBarColor(Color.parseColor("#E8584D"));
         getWindow().setNavigationBarColor(Color.parseColor("#E8584D"));
 
         userId = getIntent().getStringExtra("userId");
-        adapter=new MyShopAdapter(ds,MyFoodActivity.this, userId);
+        adapter=new MyShopAdapter(ds, MyProductActivity.this, userId);
         binding.recycleView.setHasFixedSize(true);
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
         binding.recycleView.setAdapter(adapter);
@@ -46,10 +46,10 @@ public class MyFoodActivity extends AppCompatActivity {
                 finish();
             }
         });
-        binding.flpAddFood.setOnClickListener(new View.OnClickListener() {
+        binding.flpAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MyFoodActivity.this, AddProductActivity.class);
+                Intent intent=new Intent(MyProductActivity.this, AddProductActivity.class);
                 intent.putExtra("userId",userId);
                 startActivity(intent);
             }
@@ -75,7 +75,7 @@ public class MyFoodActivity extends AppCompatActivity {
                 }
                 dialog.dismiss();
                 adapter.notifyDataSetChanged();
-            }
+             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
