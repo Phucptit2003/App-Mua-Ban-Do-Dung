@@ -49,7 +49,7 @@ public class MyFoodActivity extends AppCompatActivity {
         binding.flpAddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MyFoodActivity.this,AddFoodActivity.class);
+                Intent intent=new Intent(MyFoodActivity.this, AddProductActivity.class);
                 intent.putExtra("userId",userId);
                 startActivity(intent);
             }
