@@ -91,7 +91,7 @@
                 android:textStyle="bold"
                 android:lines="1"
                 android:maxLines="1"
-                android:text="Do Minh Nhat"
+                android:text="Linh Nguyen"
                 android:textSize="28sp"
                 android:fontFamily="sans-serif-light"
                 android:id="@+id/user_name"/>
@@ -107,7 +107,7 @@
                 android:lines="1"
                 android:ellipsize="end"
                 android:textStyle="italic"
-                android:text="21522415@gm.uit.edu.vn"
+                android:text="linhnt@gmail.com"
                 android:textSize="16sp"
                 android:id="@+id/user_email"/>
 
@@ -203,7 +203,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/bkg" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
