@@ -33,7 +33,7 @@
 
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imgFood"
+                    android:id="@+id/imgProduct"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_alignParentLeft="true"
@@ -42,7 +42,7 @@
                     android:layout_weight="2"
                     android:elevation="0.5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/baloicon"
+                    android:src="@drawable/banphim"
                     app:shapeAppearanceOverlay="@style/Quite_Border_Image" />
             </LinearLayout>
 

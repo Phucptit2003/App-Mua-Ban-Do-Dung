@@ -147,7 +147,7 @@ public class OrderAdapter extends RecyclerView.Adapter {
                         Glide.with(context)
                                 .load(snapshot.getValue(String.class))
                                 .placeholder(R.drawable.default_image)
-                                .into(viewHolder.binding.imgFood);
+                                .into(viewHolder.binding.imgProduct);
                     }
 
                     @Override

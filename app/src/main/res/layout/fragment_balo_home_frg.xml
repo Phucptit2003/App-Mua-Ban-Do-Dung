@@ -3,26 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".Fragments.Home.TechAccessoryHomeFrg">
 
+    android:orientation="vertical"
+    tools:context=".Fragments.Home.BagHomeFrg">
 
     <TextView
-        android:id="@+id/txtSeemoreFood"
+        android:id="@+id/txtSeemoreBalo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginEnd="30dp"
         android:fontFamily="@font/sfpro_regular"
         android:text="See more ->"
-        android:textColor="#FA4A0C"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:textColor="#E8584D" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rycFoodHome"
+        android:id="@+id/rycBaloHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:itemCount="3" />
-
 
 </LinearLayout>

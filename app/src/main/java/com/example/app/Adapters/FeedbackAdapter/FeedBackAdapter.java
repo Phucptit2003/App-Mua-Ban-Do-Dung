@@ -83,7 +83,7 @@ public class FeedBackAdapter extends RecyclerView.Adapter<FeedBackAdapter.ViewHo
                 Glide.with(mContext)
                         .load(tmp.getProductImage1())
                         .placeholder(R.drawable.default_image)
-                        .into(holder.binding.lnBillInfo.imgFood);
+                        .into(holder.binding.lnBillInfo.imgProduct);
             }
 
             @Override

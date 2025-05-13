@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgFood"
+            android:id="@+id/imgProduct"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_alignParentLeft="true"
@@ -35,7 +35,7 @@
 
             <TextView
 
-                android:id="@+id/txtFoodName"
+                android:id="@+id/txtProductName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
@@ -48,14 +48,14 @@
                 android:maxLines="2"
                 android:lines="2"
                 android:ellipsize="end"
-                app:layout_constraintBottom_toTopOf="@+id/txtFoodPrice"
+                app:layout_constraintBottom_toTopOf="@+id/txtProductPrice"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5" />
 
             <TextView
-                android:id="@+id/txtFoodPrice"
+                android:id="@+id/txtProductPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -63,10 +63,10 @@
                 android:textSize="16sp"
                 android:layout_marginTop="-20dp"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-                app:layout_constraintEnd_toEndOf="@+id/txtFoodName"
+                app:layout_constraintEnd_toEndOf="@+id/txtProductName"
                 app:layout_constraintHorizontal_bias="0.52"
-                app:layout_constraintStart_toStartOf="@+id/txtFoodName"
-                app:layout_constraintTop_toBottomOf="@+id/txtFoodName"
+                app:layout_constraintStart_toStartOf="@+id/txtProductName"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductName"
                 app:layout_constraintVertical_bias="0.5" />
 
             <LinearLayout
@@ -76,9 +76,9 @@
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/txtFoodPrice"
-                app:layout_constraintStart_toStartOf="@+id/txtFoodPrice"
-                app:layout_constraintTop_toBottomOf="@+id/txtFoodPrice"
+                app:layout_constraintEnd_toEndOf="@+id/txtProductPrice"
+                app:layout_constraintStart_toStartOf="@+id/txtProductPrice"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductPrice"
                 app:layout_constraintVertical_bias="0.5">
 
                 <ImageView

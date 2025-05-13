@@ -50,7 +50,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter {
                         Glide.with(context)
                                 .load(tmp.getProductImage1())
                                 .placeholder(R.drawable.default_image)
-                                .into(viewHolder.binding.imgFood);
+                                .into(viewHolder.binding.imgProduct);
                     }
 
                     @Override

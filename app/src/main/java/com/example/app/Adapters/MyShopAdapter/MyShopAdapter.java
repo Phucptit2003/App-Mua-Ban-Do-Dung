@@ -11,13 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.app.Activities.MyShop.AddProductActivity;
 import com.example.app.Activities.ProductInformation.ProductInfoActivity;
 import com.example.app.CustomMessageBox.CustomAlertDialog;
 import com.example.app.CustomMessageBox.FailToast;
 import com.example.app.CustomMessageBox.SuccessfulToast;
 import com.example.app.Model.Product;
 import com.example.app.R;
-import com.example.app.databinding.LayoutFoodItemBinding;
+import com.example.app.databinding.LayoutProductItemBinding;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutFoodItemBinding binding = LayoutFoodItemBinding.inflate(LayoutInflater.from(context), parent, false);
+        LayoutProductItemBinding binding = LayoutProductItemBinding.inflate(LayoutInflater.from(context), parent, false);
         return new ViewHolder(binding);
     }
 
@@ -44,12 +45,12 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = ds.get(position);
-        holder.binding.txtNameProdiuct.setText(product.getProductName());
+        holder.binding.txtNameProduct.setText(product.getProductName());
         holder.binding.txtPrice.setText(convertToMoney(product.getProductPrice()) + "đ");
         Glide.with(context)
                 .load(product.getProductImage1())
                 .placeholder(R.drawable.baseline_image_search_24)
-                .into(holder.binding.imgFood);
+                .into(holder.binding.imgProduct);
 
         // Xử lý sự kiện xóa sản phẩm
         holder.binding.imgDelete.setOnClickListener(view -> {
@@ -113,9 +114,9 @@ public class MyShopAdapter extends RecyclerView.Adapter<MyShopAdapter.ViewHolder
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final LayoutFoodItemBinding binding;
+        private final LayoutProductItemBinding binding;
 
-        public ViewHolder(@NonNull LayoutFoodItemBinding binding) {
+        public ViewHolder(@NonNull LayoutProductItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

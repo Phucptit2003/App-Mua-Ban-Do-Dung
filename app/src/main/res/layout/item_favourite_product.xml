@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgFavouriteFood"
+            android:id="@+id/imgFavouriteProduct"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_alignParentLeft="true"
@@ -31,7 +31,7 @@
 
             <TextView
 
-                android:id="@+id/txtFavouriteFoodName"
+                android:id="@+id/txtFavouriteProductName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -49,25 +49,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtFavouriteFoodPrice"
+                android:id="@+id/txtFavouriteProductPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="#E8584D"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/txtFavouriteFoodName"
+                app:layout_constraintEnd_toEndOf="@+id/txtFavouriteProductName"
                 app:layout_constraintHorizontal_bias="0.52"
-                app:layout_constraintStart_toStartOf="@+id/txtFavouriteFoodName"
-                app:layout_constraintTop_toBottomOf="@+id/txtFavouriteFoodName" />
+                app:layout_constraintStart_toStartOf="@+id/txtFavouriteProductName"
+                app:layout_constraintTop_toBottomOf="@+id/txtFavouriteProductName" />
 
             <LinearLayout
                 android:layout_width="99dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/txtFavouriteFoodPrice"
-                app:layout_constraintStart_toStartOf="@+id/txtFavouriteFoodPrice"
-                app:layout_constraintTop_toBottomOf="@+id/txtFavouriteFoodPrice">
+                app:layout_constraintEnd_toEndOf="@+id/txtFavouriteProductPrice"
+                app:layout_constraintStart_toStartOf="@+id/txtFavouriteProductPrice"
+                app:layout_constraintTop_toBottomOf="@+id/txtFavouriteProductPrice">
 
                 <ImageView
                     android:id="@+id/imgFavouriteRate"

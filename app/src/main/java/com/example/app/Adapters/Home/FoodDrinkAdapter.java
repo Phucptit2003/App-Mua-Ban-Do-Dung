@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.app.Fragments.Home.BagHomeFrg;
+import com.example.app.Fragments.Home.TechAccessoryHomeFrg;
+
 public class FoodDrinkAdapter extends FragmentStateAdapter {
     private final String userId;
 
@@ -16,9 +19,9 @@ public class FoodDrinkAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 1) {
-            return new DrinkHomeFrg(userId);
+            return new BagHomeFrg(userId);
         }
-        return new FoodHomeFrg(userId);
+        return new TechAccessoryHomeFrg(userId);
     }
 
     @Override

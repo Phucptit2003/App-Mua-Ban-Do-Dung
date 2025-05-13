@@ -44,10 +44,10 @@ public class FavoriteFragment extends Fragment {
             @Override
             public void DataIsLoaded(ArrayList<Product> favouriteProducts,ArrayList<String> keys) {
                 StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-                binding.recFavouriteFood.setLayoutManager(layoutManager);
-                binding.recFavouriteFood.setHasFixedSize(true);
+                binding.recFavouriteProduct.setLayoutManager(layoutManager);
+                binding.recFavouriteProduct.setHasFixedSize(true);
                 FavouriteTechnologyAccessoryAdapter adapter = new FavouriteTechnologyAccessoryAdapter(getContext(),favouriteProducts,userId);
-                binding.recFavouriteFood.setAdapter(adapter);
+                binding.recFavouriteProduct.setAdapter(adapter);
                 binding.progressBarFavouriteList.setVisibility(View.GONE);
             }
 

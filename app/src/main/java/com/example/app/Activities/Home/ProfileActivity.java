@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
+import com.example.app.Activities.MyShop.MyShopActivity;
 import com.example.app.Activities.Order.OrderActivity;
 import com.example.app.Model.User;
 import com.example.app.R;

@@ -38,7 +38,7 @@ public class FirebaseOrderDetailHelper {
         mReferenceStatusOrder = mDatabase.getReference();
     }
 
-    public void readOrderDetail(String addressId,String userId,String billId,final DataStatus dataStatus )
+    public void readOrderDetail(String addressId,String userId,String billId,final FirebaseOrderDetailHelper.DataStatus dataStatus )
     {
         mReferenceStatusOrder.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,6 +61,7 @@ public class FirebaseOrderDetailHelper {
         });
     }
 
+    public void readProductInfo(String productId, final FirebaseOrderDetailHelper.DataStatus2 dataStatus)
     {
         mReferenceStatusOrder.addValueEventListener(new ValueEventListener() {
             @Override

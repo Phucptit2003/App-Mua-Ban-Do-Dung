@@ -36,7 +36,7 @@
                     android:layout_marginTop="-10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    app:startIconDrawable="@drawable/baseline_fastfood_24"
+                    app:startIconDrawable="@drawable/baseline_tech_24"
                     android:hint="Product name">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <RadioButton
-                            android:id="@+id/rbFood"
+                            android:id="@+id/rbProduct"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="50dp"
@@ -82,7 +82,7 @@
                             android:textColorHighlight="#FFEDCC" />
 
                         <RadioButton
-                            android:id="@+id/rbDrink"
+                            android:id="@+id/rbBalo"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/sfpro_bold"
@@ -158,6 +158,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="50dp"
+                    android:text="Add Technology Accessories"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"/>
 
