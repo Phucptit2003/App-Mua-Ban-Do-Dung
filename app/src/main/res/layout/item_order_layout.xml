@@ -42,7 +42,7 @@
                     android:layout_weight="2"
                     android:elevation="0.5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pizza"
+                    android:src="@drawable/baloicon"
                     app:shapeAppearanceOverlay="@style/Quite_Border_Image" />
             </LinearLayout>
 
