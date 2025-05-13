@@ -38,7 +38,7 @@ public class FindActivity extends AppCompatActivity {
 
         initData();
         adapter = new FindAdapter(dsAll, userId,this);
-        binding.recycleFoodFinded.setAdapter(adapter);
+        binding.recycleProductFinded.setAdapter(adapter);
         initUI();
     }
 
@@ -48,8 +48,8 @@ public class FindActivity extends AppCompatActivity {
         // Thêm adapter và layout của adapter
         binding.searhView.setIconifiedByDefault(false);
         StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        binding.recycleFoodFinded.setLayoutManager(layoutManager);
-        binding.recycleFoodFinded.setHasFixedSize(true);
+        binding.recycleProductFinded.setLayoutManager(layoutManager);
+        binding.recycleProductFinded.setHasFixedSize(true);
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

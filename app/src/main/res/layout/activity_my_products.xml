@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".Activities.MyShop.MyFoodActivity">
+    tools:context=".Activities.MyShop.MyProductActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout7"
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
-        app:layout_constraintBottom_toTopOf="@+id/flpAddFood"
+        app:layout_constraintBottom_toTopOf="@+id/flpAddProduct"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
 
@@ -52,7 +52,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/flpAddFood"
+        android:id="@+id/flpAddProduct"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgFood"
+            android:id="@+id/imgProduct"
             android:layout_width="115dp"
             android:layout_height="115dp"
             android:layout_alignParentLeft="true"
@@ -38,7 +38,7 @@
 
             <TextView
 
-                android:id="@+id/txtFoodName"
+                android:id="@+id/txtProductName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -52,14 +52,14 @@
                 android:text="TextView"
                 android:textColor="#555555"
                 android:textSize="22sp"
-                app:layout_constraintBottom_toTopOf="@+id/txtFoodPrice"
+                app:layout_constraintBottom_toTopOf="@+id/txtProductPrice"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtFoodPrice"
+                android:id="@+id/txtProductPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -69,10 +69,10 @@
                 android:textColor="#E8584D"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/txtFoodName"
+                app:layout_constraintEnd_toEndOf="@+id/txtProductName"
                 app:layout_constraintHorizontal_bias="0.52"
-                app:layout_constraintStart_toStartOf="@+id/txtFoodName"
-                app:layout_constraintTop_toBottomOf="@+id/txtFoodName"
+                app:layout_constraintStart_toStartOf="@+id/txtProductName"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductName"
                 app:layout_constraintVertical_bias="0.5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

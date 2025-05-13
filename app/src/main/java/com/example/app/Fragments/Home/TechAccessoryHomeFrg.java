@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.app.Activities.Home.FindActivity;
 import com.example.app.Adapters.Home.TechBaloFrgAdapter;
 import com.example.app.Model.Product;
-import com.example.app.databinding.FragmentDrinkHomeFrgBinding;
+import com.example.app.databinding.FragmentBaloHomeFrgBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,8 +26,8 @@ import java.util.ArrayList;
 
 
 public class TechAccessoryHomeFrg extends Fragment {
-    private FragmentDrinkHomeFrgBinding binding;
-    private ArrayList<Product> dsFood;
+    private FragmentBaloHomeFrgBinding binding;
+    private ArrayList<Product> dsProduct;
     private TechBaloFrgAdapter adapter;
     private String userId;
 
@@ -38,7 +38,7 @@ public class TechAccessoryHomeFrg extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentDrinkHomeFrgBinding.inflate(inflater, container, false);
+        binding = FragmentBaloHomeFrgBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         initData();
         initUI();
@@ -47,11 +47,11 @@ public class TechAccessoryHomeFrg extends Fragment {
 
     private void initUI() {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        binding.rycDrinkHome.setLayoutManager(linearLayoutManager);
-        adapter=new TechBaloFrgAdapter(dsFood, userId,getContext());
-        binding.rycDrinkHome.setAdapter(adapter);
-        binding.rycDrinkHome.setHasFixedSize(true);
-        binding.txtSeemoreDrink.setOnClickListener(new View.OnClickListener() {
+        binding.rycBaloHome.setLayoutManager(linearLayoutManager);
+        adapter=new TechBaloFrgAdapter(dsProduct, userId,getContext());
+        binding.rycBaloHome.setAdapter(adapter);
+        binding.rycBaloHome.setHasFixedSize(true);
+        binding.txtSeemoreBalo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), FindActivity.class);
@@ -63,11 +63,11 @@ public class TechAccessoryHomeFrg extends Fragment {
 
 
     private void initData() {
-        dsFood = new ArrayList<>();
+        dsProduct = new ArrayList<>();
         FirebaseDatabase.getInstance().getReference("Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dsFood.clear();  // Xóa danh sách trước khi cập nhật dữ liệu mới
+                dsProduct.clear();  // Xóa danh sách trước khi cập nhật dữ liệu mới
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     Product product = ds.getValue(Product.class);
 
@@ -83,7 +83,7 @@ public class TechAccessoryHomeFrg extends Fragment {
                         if (!state.equals("deleted") &&
                                 productType.equalsIgnoreCase("TechAccessory") &&
                                 !publisherId.equals(currentUserId)) {
-                            dsFood.add(product);
+                            dsProduct.add(product);
                         }
                     }
                 }

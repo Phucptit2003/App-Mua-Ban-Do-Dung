@@ -62,7 +62,7 @@
                     android:layout_height="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/cat_2" />
+                    app:srcCompat="@drawable/camera" />
 
                 <TextView
                     android:id="@+id/txtTitleNotification"

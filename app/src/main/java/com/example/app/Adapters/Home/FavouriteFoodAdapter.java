@@ -75,9 +75,9 @@ public class FavouriteFoodAdapter extends RecyclerView.Adapter<FavouriteFoodAdap
             Glide.with(mContext)
                     .load(product.getProductImage1())
                     .placeholder(R.drawable.image_default)
-                    .into(holder.binding.imgFavouriteFood);
+                    .into(holder.binding.imgFavouriteProduct);
 
-            holder.binding.txtFavouriteFoodName.setText(product.getProductName());
+            holder.binding.txtFavouriteProductName.setText(product.getProductName());
             double ratingStar = (double) Math.round(product.getRatingStar() * 10) / 10;
             holder.binding.txtFavouriteRating.setText(ratingStar + "/5.0");
             if (product.getRatingStar()>=5) {
@@ -87,7 +87,7 @@ public class FavouriteFoodAdapter extends RecyclerView.Adapter<FavouriteFoodAdap
             } else {
                 holder.binding.imgFavouriteRate.setImageResource(R.drawable.rating_star_empty);
             }
-            holder.binding.txtFavouriteFoodPrice.setText(nf.format(product.getProductPrice()));
+            holder.binding.txtFavouriteProductPrice.setText(nf.format(product.getProductPrice()));
             holder.binding.parentOfItemInFavourite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

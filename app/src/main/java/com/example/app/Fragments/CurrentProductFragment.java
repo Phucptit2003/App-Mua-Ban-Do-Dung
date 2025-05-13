@@ -49,9 +49,9 @@ public class CurrentProductFragment extends Fragment {
     private List<InfoCurrentProduct> getListInfoCurrentProduct() {
         List<InfoCurrentProduct> list = new ArrayList<>();
 
-        list.add(new InfoCurrentProduct(R.drawable.pop_1, "Product1", "State", "2000"));
-        list.add(new InfoCurrentProduct(R.drawable.pop_1, "Product2", "State", "2000"));
-        list.add(new InfoCurrentProduct(R.drawable.pop_1, "Product3", "State", "2000"));
+        list.add(new InfoCurrentProduct(R.drawable.banphim, "Product1", "State", "2000"));
+        list.add(new InfoCurrentProduct(R.drawable.banphim, "Product2", "State", "2000"));
+        list.add(new InfoCurrentProduct(R.drawable.banphim, "Product3", "State", "2000"));
 
         return list;
     }

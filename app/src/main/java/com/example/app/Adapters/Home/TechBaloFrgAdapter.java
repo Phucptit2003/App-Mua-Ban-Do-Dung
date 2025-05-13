@@ -60,9 +60,9 @@ public class TechBaloFrgAdapter extends RecyclerView.Adapter {
         Product item = ds.get(position);
         Glide.with(newHolder.binding.getRoot())
                 .load(item.getProductImage1())
-                .into(newHolder.binding.imgFood);
-        newHolder.binding.txtFoodName.setText(item.getProductName());
-        newHolder.binding.txtFoodPrice.setText(nf.format(item.getProductPrice()));
+                .into(newHolder.binding.imgProduct);
+        newHolder.binding.txtProductName.setText(item.getProductName());
+        newHolder.binding.txtProductPrice.setText(nf.format(item.getProductPrice()));
         newHolder.binding.parentOfItemInHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

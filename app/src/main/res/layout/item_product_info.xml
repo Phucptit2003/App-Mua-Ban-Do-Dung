@@ -8,7 +8,7 @@
 
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgFood"
+        android:id="@+id/imgProduct"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_gravity="top|center"

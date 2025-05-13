@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".Activities.MyShop.AddFoodActivity">
+    tools:context=".Activities.MyShop.AddProductActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -255,39 +255,12 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_begin="185dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:weightSum="2">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/imgProduct3"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="14dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    app:srcCompat="@drawable/default_image" />-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/imgProduct4"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_margin="14dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    app:srcCompat="@drawable/default_image" />-->
-<!--            </LinearLayout>-->
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <include
-        android:id="@+id/lnAddFood"
-        layout="@layout/layout_information_food"
+        android:id="@+id/lnAddProduct"
+        layout="@layout/layout_information_product"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"

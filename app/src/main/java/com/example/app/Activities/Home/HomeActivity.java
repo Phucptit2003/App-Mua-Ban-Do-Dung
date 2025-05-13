@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.app.Activities.Cart_PlaceOrder.CartActivity;
 import com.example.app.Activities.Cart_PlaceOrder.EmptyCartActivity;
+import com.example.app.Activities.MyShop.MyShopActivity;
 import com.example.app.Activities.Order.OrderActivity;
 import com.example.app.CustomMessageBox.CustomAlertDialog;
 import com.example.app.CustomMessageBox.SuccessfulToast;

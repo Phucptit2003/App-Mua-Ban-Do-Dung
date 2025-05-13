@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.app.Activities.Home.ChatDetailActivity;
+import com.example.app.Activities.MyShop.AddProductActivity;
 import com.example.app.Adapters.ProductInfomation.CommentRecyclerViewAdapter;
 import com.example.app.Adapters.ProductInfomation.ProductInfoImageAdapter;
 import com.example.app.CustomMessageBox.FailToast;
@@ -203,7 +204,7 @@ public class ProductInfoActivity extends AppCompatActivity {
         binding.btnEditProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProductInfoActivity.this, AddFoodActivity.class);
+                Intent intent = new Intent(ProductInfoActivity.this, AddProductActivity.class);
                 Product product = new Product(productId, productName, productImage1, productImage2, productImage3, productImage4, productPrice, productType, remainAmount, sold, productDescription, ratingStar, ratingAmount, publisherId, state);
                 intent.putExtra("Product updating", product);
                 startActivity(intent);

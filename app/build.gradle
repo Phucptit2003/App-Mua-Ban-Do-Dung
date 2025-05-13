@@ -24,6 +24,9 @@ android {
             buildConfigField "String", "IMGUR_CLIENT_ID", "\"b82c8096a9ddfe1\""
         }
     }
+    viewBinding {
+        enabled = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17

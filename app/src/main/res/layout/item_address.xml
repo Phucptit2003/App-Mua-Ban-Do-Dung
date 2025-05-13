@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do Minh Nhat"
+        android:text="Nguyen Van A"
         android:textSize="16sp"
         android:textStyle="bold"
         android:ellipsize="end"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:text="Hoang Nhu Street, Hop Giang Ward, Cao Bang blahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+        android:text="Số 123, Đường ABC, Thành Phố CDE, Tỉnh XYZ"
         android:textSize="12sp"
         android:maxLines="2"
         android:layout_below="@id/receiver_name"
@@ -74,7 +74,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0824670790"
+        android:text="0123456789"
         android:layout_toEndOf="@+id/choose"
         android:layout_below="@+id/detail_address"
         android:textStyle="bold"

@@ -76,14 +76,6 @@ public class FeedBackAdapter extends RecyclerView.Adapter<FeedBackAdapter.ViewHo
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Product tmp=snapshot.getValue(Product.class);
-                //set Thông tin
-                holder.binding.lnBillInfo.txtPrice.setText(CurrencyFormatter.getFormatter().format(item.getAmount()*Double.valueOf(tmp.getProductPrice()))+"");
-                holder.binding.lnBillInfo.txtName.setText(tmp.getProductName());
-                holder.binding.lnBillInfo.txtCount.setText("Count: " +item.getAmount()+"");
-                Glide.with(mContext)
-                        .load(tmp.getProductImage1())
-                        .placeholder(R.drawable.default_image)
-                        .into(holder.binding.lnBillInfo.imgFood);
             }
 
             @Override

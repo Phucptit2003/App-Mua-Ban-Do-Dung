@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapplication.Fragments;
+package com.example.app.Fragments;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.app.Adapters.NotificationListAdapter;
+import com.example.app.Helpers.FirebaseNotificationHelper;
 import com.example.app.Model.Notification;
 import com.example.app.databinding.FragmentNotificationBinding;
 

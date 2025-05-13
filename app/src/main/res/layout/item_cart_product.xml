@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="2dp">
 
-    <!-- Layout chứa các nút khi vuốt -->
     <LinearLayout
         android:id="@+id/buttons_container"
         android:layout_width="wrap_content"
@@ -72,7 +71,6 @@
                     android:src="@mipmap/ic_launcher"/>
             </androidx.cardview.widget.CardView>
 
-            <!-- Thông tin sản phẩm -->
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="0dp"
@@ -122,9 +120,11 @@
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:text="-"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:textColor="#FFFFFF"
-                    android:background="@drawable/rounded_button_left"/>
+                    android:background="@drawable/rounded_button_left"
+                    android:padding="4dp"/>
+
 
                 <TextView
                     android:id="@+id/product_amount"
@@ -140,8 +140,11 @@
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:text="+"
-                    android:textSize="12sp"
-                    android:background="@drawable/rounded_button_right"/>
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_button_right"
+                    android:padding="4dp"/>
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

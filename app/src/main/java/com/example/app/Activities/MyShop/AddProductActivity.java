@@ -97,7 +97,7 @@ public class AddProductActivity extends AppCompatActivity {
             binding.lnAddProduct.edtDescp.setText(productUpdate.getDescription());
             binding.lnAddProduct.edtPrice.setText(productUpdate.getProductPrice() + "");
             if (productUpdate.getProductType().equals("Balo")) {
-                binding.lnAddProduct.rbDrink.setChecked(true);
+                binding.lnAddProduct.rbBalo.setChecked(true);
             } else {
                 binding.lnAddProduct.rbProduct.setChecked(true);
             }
