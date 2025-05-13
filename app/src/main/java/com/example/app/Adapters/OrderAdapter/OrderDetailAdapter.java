@@ -45,8 +45,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Product tmp=snapshot.getValue(Product.class);
-                        viewHolder.binding.txtDate.setText(tmp.getOrderDate()+"");
-                        viewHolder.binding.txtStatus.setText(tmp.getOrderStatus());
+                        viewHolder.binding.txtName.setText(tmp.getProductName());
                         viewHolder.binding.txtPrice.setText(CurrencyFormatter.getFormatter().format(Double.valueOf(tmp.getProductPrice())* billInfo.getAmount())+"");
                         Glide.with(context)
                                 .load(tmp.getProductImage1())
