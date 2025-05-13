@@ -43,8 +43,7 @@ public class NotificationFragment extends Fragment {
             @Override
             public void DataIsLoaded(List<Notification> notificationList, List<Notification> notificationListToNotify) {
                 NotificationListAdapter adapter = new NotificationListAdapter(getContext(),notificationList,userId);
-                binding.recNotification.setHasFixedSize(true);
-                binding.recNotification.setLayoutManager(new LinearLayoutManager(getContext()));
+
                 binding.recNotification.setAdapter(adapter);
                 binding.progressBarNotification.setVisibility(View.GONE);
             }

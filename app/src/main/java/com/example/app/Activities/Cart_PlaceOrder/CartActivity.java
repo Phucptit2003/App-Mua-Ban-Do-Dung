@@ -58,8 +58,6 @@ public class CartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(CartActivity.this, ProceedOrderActivity.class);
                 intent.putExtra("buyProducts", buyProducts);
-                String totalPriceDisplay = binding.totalPrice.getText().toString();
-                intent.putExtra("totalPrice", totalPriceDisplay);
                 intent.putExtra("userId",userId);
                 proceedOrderLauncher.launch(intent);
             }
