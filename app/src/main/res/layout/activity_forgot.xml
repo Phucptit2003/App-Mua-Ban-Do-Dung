@@ -24,6 +24,10 @@
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/padding_dimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
@@ -48,6 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:lines="1"
+                android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/edtEmail"/>
         </com.google.android.material.textfield.TextInputLayout>
