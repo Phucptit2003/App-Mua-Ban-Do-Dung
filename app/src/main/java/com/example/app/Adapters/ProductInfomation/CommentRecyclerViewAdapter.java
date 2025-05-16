@@ -35,7 +35,6 @@ public class CommentRecyclerViewAdapter extends RecyclerView.Adapter<CommentRecy
 
     @Override
     public void onBindViewHolder(@NonNull CommentRecyclerViewAdapter.ViewHolder holder, int position) {
-        // find name from id
         Comment comment = commentList.get(position);
         final String[] userName = {""};
 
@@ -51,7 +50,6 @@ public class CommentRecyclerViewAdapter extends RecyclerView.Adapter<CommentRecy
 
             }
         });
-        holder.binding.txtRecCommentUsername.setText(userName[0]);
         holder.binding.txtRecCommentComment.setText(comment.getCommentDetail());
         holder.binding.recCommentRatingBar.setRating(comment.getRating());
     }

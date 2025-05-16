@@ -69,7 +69,6 @@ public class ProceedOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validateDate()) {
-                    // Filter new map to add to bills
                     HashMap<String, CartInfo> cartInfoMap = new HashMap<>();
                     for (CartInfo cartInfo : cartInfoList) {
                         cartInfoMap.put(cartInfo.getProductId(), cartInfo);
@@ -87,25 +86,19 @@ public class ProceedOrderActivity extends AppCompatActivity {
                                 for (String productId : cartInfoKeySet) {
                                     if (product.getProductId().equals(productId)) {
                                         if (filterCartInfoMap.containsKey(product.getPublisherId())) {
-                                            // filterCartInfoMap
                                             filterCartInfoMap.get(product.getPublisherId()).add(cartInfoMap.get(productId));
-
-                                            // filterCartInfoPriceMap
                                             long totalPrice = filterCartInfoPriceMap.get(product.getPublisherId());
                                             totalPrice += (long) product.getProductPrice() * cartInfoMap.get(productId).getAmount();
                                             filterCartInfoPriceMap.put(product.getPublisherId(), totalPrice);
                                         }
                                         else {
-                                            // filterCartInfoMap
                                             List<CartInfo> tempList = new ArrayList<>();
                                             tempList.add(cartInfoMap.get(productId));
                                             filterCartInfoMap.put(product.getPublisherId(), tempList);
 
-                                            // filterCartInfoPriceMap
                                             long currentTotalPrice = (long) product.getProductPrice() * cartInfoMap.get(productId).getAmount();
                                             filterCartInfoPriceMap.put(product.getPublisherId(), currentTotalPrice);
 
-                                            // filterCartInfoImageUrlMap
                                             String currentImageUrl = product.getProductImage1();
                                             filterCartInfoImageUrlMap.put(product.getPublisherId(), currentImageUrl);
                                         }
@@ -113,10 +106,8 @@ public class ProceedOrderActivity extends AppCompatActivity {
                                 }
                             }
 
-                            // Loop through all cartInfo
                             Set<String> filterCartInfoKeySet = filterCartInfoMap.keySet();
                             for (String senderId : filterCartInfoKeySet) {
-                                // Add to Bills
                                 String billId = FirebaseDatabase.getInstance().getReference().push().getKey();
                                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                                 Date date = new Date();
@@ -127,15 +118,12 @@ public class ProceedOrderActivity extends AppCompatActivity {
                                         if (task.isSuccessful()) {
                                             List<CartInfo> cartInfoList1 = filterCartInfoMap.get(senderId);
                                             for (CartInfo cartInfo : cartInfoList1) {
-                                                // Add to BillInfos
                                                 String billInfoId = FirebaseDatabase.getInstance().getReference().push().getKey();
                                                 HashMap<String, Object> map1 = new HashMap<>();
                                                 map1.put("amount", cartInfo.getAmount());
                                                 map1.put("billInfoId", billInfoId);
                                                 map1.put("productId", cartInfo.getProductId());
                                                 FirebaseDatabase.getInstance().getReference().child("BillInfos").child(billId).child(billInfoId).setValue(map1);
-
-                                                // Update Carts and CartInfos
                                                 FirebaseDatabase.getInstance().getReference().child("Carts").addListenerForSingleValueEvent(new ValueEventListener() {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -236,7 +224,6 @@ public class ProceedOrderActivity extends AppCompatActivity {
     }
 
     private void initChangeAddressActivity() {
-        // Init launcher
         changeAddressLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {
                 loadAddressData();

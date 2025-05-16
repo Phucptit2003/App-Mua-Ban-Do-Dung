@@ -84,7 +84,6 @@ public class ProductInfoActivity extends AppCompatActivity {
         ratingAmount = intent.getIntExtra("ratingAmount", 0);
         state = intent.getStringExtra("state");
 
-        // set up default value
         binding.txtNameProduct.setText(productName);
         binding.txtPriceProduct.setText(CurrencyFormatter.getFormatter().format(Double.valueOf(productPrice)));
         binding.txtDesciption.setText(productDescription);
@@ -103,7 +102,6 @@ public class ProductInfoActivity extends AppCompatActivity {
             binding.btnEditProduct.setVisibility(View.INVISIBLE);
         }
 
-        // set Adapter for image slider
         ArrayList<String> dsImage =new ArrayList<>();
         if (productImage1 != null) {
             dsImage.add(productImage1);
@@ -121,8 +119,6 @@ public class ProductInfoActivity extends AppCompatActivity {
         binding.pagerProductImage.setAdapter(imageAdapter2);
         binding.tabDots.attachTo(binding.pagerProductImage);
 
-
-        // load sell, favourite
         new FirebaseProductInfoHelper(productId).countFavourite(new FirebaseProductInfoHelper.DataStatusCountFavourite() {
             @Override
             public void DataIsLoaded(int countFavourite) {
@@ -140,7 +136,6 @@ public class ProductInfoActivity extends AppCompatActivity {
         });
 
 
-        // load data cart
         final boolean[] isCartExists = new boolean[1];
         final boolean[] isProductExists = new boolean[1];
         final Cart[] currentCart = {new Cart()};
@@ -176,7 +171,6 @@ public class ProductInfoActivity extends AppCompatActivity {
         loadDataFavourite();
 
 
-        //add to cart process
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,7 +206,6 @@ public class ProductInfoActivity extends AppCompatActivity {
         });
     }
 
-    // DEFINE FUNCTION
     public void setCommentRecView()
     {
         new FirebaseProductInfoHelper(productId).readComments(new FirebaseProductInfoHelper.DataStatus() {
@@ -238,7 +231,6 @@ public class ProductInfoActivity extends AppCompatActivity {
     }
     public void updateCart(boolean isCartExists, boolean isProductExists,Cart currentCart,CartInfo currentCartInfo,int amount)
     {
-        // truong hop user moi tao chua co gio hang
         if (!isCartExists)
         {
             Cart cart = new Cart();
@@ -267,7 +259,6 @@ public class ProductInfoActivity extends AppCompatActivity {
             });
         }
         else {
-            // truong hop chua co san pham hien tai trong gio hang
             if (!isProductExists)
             {
                 FirebaseDatabase.getInstance().getReference().child("Products").child(productId).child("remainAmount").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -336,7 +327,6 @@ public class ProductInfoActivity extends AppCompatActivity {
                 }
                 isExistsFavourite[0] = isFavouriteExists;
                 isExistsFavouriteDetail[0] = isFavouriteDetailExists;
-                // end of load data
                 binding.progressBarProductInfo.setVisibility(View.GONE);
             }
 

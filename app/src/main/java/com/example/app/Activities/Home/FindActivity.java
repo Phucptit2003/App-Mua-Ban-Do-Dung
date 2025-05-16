@@ -56,7 +56,6 @@ public class FindActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //set Sự kiện của ô nhập
         binding.searhView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {

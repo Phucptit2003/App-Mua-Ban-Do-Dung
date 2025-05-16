@@ -34,7 +34,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void initUI() {
-        //Set adapter cho recycleView
         TechBaloAdapter adapter1=new TechBaloAdapter(HomeFragment.this, userId);
         binding.viewpaperHome.setAdapter(adapter1);
         binding.viewpaperHome.setUserInputEnabled(false);

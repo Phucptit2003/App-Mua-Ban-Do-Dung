@@ -41,13 +41,12 @@
         android:id="@+id/tabHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:contentDescription="tab layout"
         android:outlineAmbientShadowColor="@color/cardview_shadow_end_color"
         app:tabIndicatorColor="#FD8C32"
         app:tabIndicatorFullWidth="false"
-        app:tabIndicatorHeight="3dp"
-        android:background="@android:color/transparent"
-        />
+        app:tabIndicatorHeight="3dp" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpaperHome"

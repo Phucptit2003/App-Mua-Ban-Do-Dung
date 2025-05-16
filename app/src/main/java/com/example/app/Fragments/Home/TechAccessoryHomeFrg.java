@@ -67,12 +67,11 @@ public class TechAccessoryHomeFrg extends Fragment {
         FirebaseDatabase.getInstance().getReference("Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dsProduct.clear();  // Xóa danh sách trước khi cập nhật dữ liệu mới
+                dsProduct.clear();
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     Product product = ds.getValue(Product.class);
 
                     if (product != null) {
-                        // Lấy giá trị từ product và kiểm tra null trước khi sử dụng
                         String state = product.getState() != null ? product.getState() : "";
                         String productType = product.getProductType() != null ? product.getProductType() : "";
                         String publisherId = product.getPublisherId() != null ? product.getPublisherId() : "";

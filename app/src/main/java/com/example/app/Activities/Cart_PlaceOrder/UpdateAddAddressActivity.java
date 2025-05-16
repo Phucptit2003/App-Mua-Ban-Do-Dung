@@ -75,7 +75,6 @@ public class UpdateAddAddressActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (validateAddressInfo()) {
                     if (binding.updateComplete.getText().equals("Complete")) {
-                        // Add default address
                         if (binding.setDefault.isChecked()) {
                             String addressId = FirebaseDatabase.getInstance().getReference().push().getKey();
                             GlobalConfig.choseAddressId = addressId;
@@ -114,7 +113,6 @@ public class UpdateAddAddressActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                        // Add normal address
                         else {
                             String addressId = FirebaseDatabase.getInstance().getReference().push().getKey();
                             GlobalConfig.choseAddressId = addressId;
@@ -137,7 +135,6 @@ public class UpdateAddAddressActivity extends AppCompatActivity {
                         }
                     }
                     else {
-                        // Update to default address
                         if (binding.setDefault.isChecked()) {
                             Address temp = new Address(GlobalConfig.updateAddressId, binding.detailAddress.getText().toString().trim(), "default",
                                     binding.fullName.getText().toString().trim(), binding.phoneNumber.getText().toString().trim());

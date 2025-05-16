@@ -87,16 +87,15 @@ public class CartProductAdapter extends RecyclerView.Adapter<CartProductAdapter.
         CartInfo cartInfo = mCartInfos.get(position);
         String itemId = cartInfo.getCartInfoId();
 
-        // Khôi phục trạng thái nếu có
         if (itemStates.containsKey(itemId)) {
             boolean isChecked = itemStates.get(itemId);
             holder.binding.checkBox.setChecked(isChecked);
         }
 
-        // Lưu trạng thái khi thay đổi
         holder.binding.checkBox.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             itemStates.put(itemId, isChecked);
         });
+
 
 
         holder.binding.checkBox.setChecked(isCheckAll);
@@ -437,7 +436,6 @@ public class CartProductAdapter extends RecyclerView.Adapter<CartProductAdapter.
         }
     }
 
-    // Phương thức khôi phục trạng thái
     public void restoreStates(Bundle savedInstanceState) {
         for (String key : savedInstanceState.keySet()) {
             itemStates.put(key, savedInstanceState.getBoolean(key));

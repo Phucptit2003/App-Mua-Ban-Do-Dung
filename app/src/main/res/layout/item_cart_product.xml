@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,13 +8,13 @@
     <LinearLayout
         android:id="@+id/buttons_container"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingStart="10dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_marginTop="10dp">
 
         <ImageButton
             android:id="@+id/like"
@@ -33,7 +32,6 @@
             android:src="@drawable/ic_delete"/>
     </LinearLayout>
 
-    <!-- CardView chứa nội dung chính -->
     <androidx.cardview.widget.CardView
         android:id="@+id/item_container"
         android:layout_width="match_parent"
@@ -45,7 +43,7 @@
         android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttons_container"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +51,6 @@
             android:layout_height="wrap_content"
             android:padding="10dp">
 
-            <!-- Ảnh sản phẩm -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/product_image_container"
                 android:layout_width="wrap_content"
@@ -97,7 +94,6 @@
                 app:layout_constraintTop_toBottomOf="@id/product_name"
                 android:layout_marginTop="5dp"/>
 
-            <!-- Checkbox chọn sản phẩm -->
             <CheckBox
                 android:id="@+id/check_box"
                 android:layout_width="wrap_content"
@@ -105,7 +101,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <!-- Nút tăng/giảm số lượng -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +120,6 @@
                     android:background="@drawable/rounded_button_left"
                     android:padding="4dp"/>
 
-
                 <TextView
                     android:id="@+id/product_amount"
                     android:layout_width="38dp"
@@ -144,9 +138,7 @@
                     android:textColor="#FFFFFF"
                     android:background="@drawable/rounded_button_right"
                     android:padding="4dp"/>
-
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

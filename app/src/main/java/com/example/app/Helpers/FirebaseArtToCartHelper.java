@@ -138,7 +138,6 @@ public class FirebaseArtToCartHelper {
                                 dataStatus.DataIsInserted();
                             }
 
-                            // Update remainAmount in Products of productId
                             FirebaseDatabase.getInstance().getReference().child("Products").child(cartInfo.getProductId()).child("remainAmount").addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {

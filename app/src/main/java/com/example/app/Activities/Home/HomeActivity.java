@@ -55,10 +55,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private LinearLayout layoutMain;
     private Fragment selectionFragment;
 
-    private static final int NOTIFICATION_PERMISSION_CODE = 10023;
-    private static final int STORAGE_PERMISSION_CODE = 101;
-    FirebaseProductHelper firebaseHelper = new FirebaseProductHelper();
-
 
 
     @Override
@@ -69,7 +65,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        // Request permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(HomeActivity.this,
                     Manifest.permission.POST_NOTIFICATIONS) !=
@@ -115,12 +110,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 .commit();
         setEventNavigationBottom();
         setCartNavigation();
-        ///////////////
-
-
-
-
-        ////////////////////////
         binding.navigationLeft.setNavigationItemSelectedListener(this);
     }
 
@@ -194,7 +183,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         });
 
-        // Mặc định chọn Home
         bottomNavigation.setSelectedItemId(R.id.home_menu);
     }
 
@@ -258,7 +246,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadInformationForNavigationBar() {
-        // Load số lượng thông báo chưa đọc
         new FirebaseNotificationHelper(this).readNotification(userId, new FirebaseNotificationHelper.DataStatus() {
             @Override
             public void DataIsLoaded(List<Notification> notificationList, List<Notification> notificationListToNotify) {
@@ -269,7 +256,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     }
                 }
 
-                // Hiển thị badge trên icon notification
                 BottomNavigationView bottomNavigation = binding.bottomNavigation;
                 if (count > 0) {
                     bottomNavigation.getOrCreateBadge(R.id.notification_menu).setNumber(count);
@@ -277,7 +263,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     bottomNavigation.removeBadge(R.id.notification_menu);
                 }
 
-                // Hiển thị thông báo
                 for (Notification notification : notificationListToNotify) {
                     makeNotification(notification);
                 }
@@ -296,7 +281,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        // Load thông tin người dùng
         new FirebaseUserInfoHelper(this).readUserInfo(userId, new FirebaseUserInfoHelper.DataStatus() {
             @Override
             public void DataIsLoaded(User user) {
@@ -328,6 +312,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void makeNotification(Notification notification) {
-        // Code tạo thông báo (giữ nguyên như cũ)
     }
 }
