@@ -41,20 +41,16 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.uploadcare.android.library.api.UploadcareClient;
+import com.uploadcare.android.library.api.UploadcareFile;
+import com.uploadcare.android.library.upload.FileUploader;
+import com.uploadcare.android.library.callbacks.UploadFileCallback;
+import com.uploadcare.android.library.exceptions.UploadcareApiException;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class AddProductActivity extends AppCompatActivity {
     private ActivityAddProductBinding binding;
@@ -71,10 +67,7 @@ public class AddProductActivity extends AppCompatActivity {
     private static final int SECOND_IMAGE = 2;
     private static final int THIRD_IMAGE = 3;
     private static final int FOURTH_IMAGE = 4;
-    private String deleteHash1 = "";
-    private String deleteHash2 = "";
-    private String deleteHash3 = "";
-    private String deleteHash4 = "";
+    private UploadcareClient uploadcareClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +77,9 @@ public class AddProductActivity extends AppCompatActivity {
 
         getWindow().setStatusBarColor(Color.parseColor("#E8584D"));
         getWindow().setNavigationBarColor(Color.parseColor("#E8584D"));
+
+        // Khởi tạo UploadcareClient
+        uploadcareClient = new UploadcareClient(BuildConfig.UPLOADCARE_PUBLIC_KEY, BuildConfig.UPLOADCARE_SECRET_KEY);
 
         // Nhận intent từ edit
         Intent intentUpdate = getIntent();
@@ -170,19 +166,14 @@ public class AddProductActivity extends AppCompatActivity {
     private void deleteOldImage(int position) {
         StringBuilder imageURL = new StringBuilder();
         handleImagePosition(imageURL, position);
-        String deleteHash = getDeleteHash(position);
-        if (!imageURL.toString().isEmpty()) {
-            if (deleteHash != null && !deleteHash.isEmpty()) {
-                // Xóa ảnh Imgur
+        String imageUrlStr = imageURL.toString();
+        if (!imageUrlStr.isEmpty()) {
+            if (imageUrlStr.startsWith("https://ucarecdn.com")) {
+                // Xóa ảnh Uploadcare
                 new Thread(() -> {
                     try {
-                        OkHttpClient client = new OkHttpClient();
-                        Request request = new Request.Builder()
-                                .url("https://api.imgur.com/3/image/" + deleteHash)
-                                .addHeader("Authorization", "Client-ID " + BuildConfig.IMGUR_CLIENT_ID)
-                                .delete()
-                                .build();
-                        client.newCall(request).execute();
+                        String uuid = imageUrlStr.replace("https://ucarecdn.com/", "").split("/")[0];
+                        uploadcareClient.deleteFile(uuid);
                         runOnUiThread(() -> {
                             if (position == FOURTH_IMAGE) {
                                 uploadDialog.dismiss();
@@ -204,11 +195,11 @@ public class AddProductActivity extends AppCompatActivity {
                         });
                     }
                 }).start();
-            } else if (imageURL.toString().startsWith("https://firebasestorage.googleapis.com")) {
+            } else if (imageUrlStr.startsWith("https://firebasestorage.googleapis.com")) {
                 // Xóa ảnh Firebase Storage
                 new Thread(() -> {
                     try {
-                        FirebaseStorage.getInstance().getReferenceFromUrl(imageURL.toString()).delete().addOnCompleteListener(task -> {
+                        FirebaseStorage.getInstance().getReferenceFromUrl(imageUrlStr).delete().addOnCompleteListener(task -> {
                             runOnUiThread(() -> {
                                 if (position == FOURTH_IMAGE) {
                                     uploadDialog.dismiss();
@@ -232,7 +223,7 @@ public class AddProductActivity extends AppCompatActivity {
                     }
                 }).start();
             } else {
-                // Bỏ qua nếu không có deleteHash hoặc URL không hợp lệ
+                // Bỏ qua nếu URL không hợp lệ
                 if (position != FOURTH_IMAGE) {
                     deleteOldImage(position + 1);
                 } else {
@@ -249,21 +240,6 @@ public class AddProductActivity extends AppCompatActivity {
                 new SuccessfulToast(AddProductActivity.this, "Update successfully!").showToast();
                 finish();
             }
-        }
-    }
-
-    private String getDeleteHash(int position) {
-        switch (position) {
-            case FIRST_IMAGE:
-                return deleteHash1;
-            case SECOND_IMAGE:
-                return deleteHash2;
-            case THIRD_IMAGE:
-                return deleteHash3;
-            case FOURTH_IMAGE:
-                return deleteHash4;
-            default:
-                return "";
         }
     }
 
@@ -320,7 +296,7 @@ public class AddProductActivity extends AppCompatActivity {
             int amount = Integer.parseInt(binding.lnAddProduct.edtAmount.getText().toString());
             String description = binding.lnAddProduct.edtDescp.getText().toString();
             if (!checkUpdate) {
-                if (img1.isEmpty()) { // Chỉ yêu cầu ít nhất 1 ảnh
+                if (img1.isEmpty()) {
                     createDialog("Vui lòng chọn ít nhất 1 hình").create().show();
                     return false;
                 } else if (name.isEmpty() || name.length() < 8) {
@@ -401,18 +377,18 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     public void uploadImage(int position) {
-        Uri uri = uri1;
+        Uri uri;
         if (position == SECOND_IMAGE) {
             uri = uri2;
-        }
-        if (position == THIRD_IMAGE) {
+        } else if (position == THIRD_IMAGE) {
             uri = uri3;
-        }
-        if (position == FOURTH_IMAGE) {
+        } else if (position == FOURTH_IMAGE) {
             uri = uri4;
+        } else {
+            uri = uri1;
         }
         if (uri != null) {
-            Uri finalUri = uri;
+            uploadDialog.show();
             new Thread(() -> {
                 try {
                     if (!isNetworkAvailable()) {
@@ -423,123 +399,79 @@ public class AddProductActivity extends AppCompatActivity {
                         return;
                     }
 
-                    File file = getFileFromUri(finalUri);
-                    if (file == null) {
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            new FailToast(AddProductActivity.this, "Error accessing image file").showToast();
-                        });
-                        return;
-                    }
+                    FileUploader uploader = new FileUploader(uploadcareClient, uri, AddProductActivity.this).store(true);
+                    uploader.uploadAsync(new UploadFileCallback() {
+                        @Override
+                        public void onFailure(UploadcareApiException e) {
+                            Log.e("UploadcareUpload", "Upload failed: " + e.getMessage());
+                            runOnUiThread(() -> {
+                                uploadDialog.dismiss();
+                                new FailToast(AddProductActivity.this, "Uploadcare upload failed: " + e.getMessage()).showToast();
+                            });
+                        }
 
-                    if (file.length() > 10 * 1024 * 1024) {
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            new FailToast(AddProductActivity.this, "Image size exceeds 10MB").showToast();
-                        });
-                        return;
-                    }
-                    String fileName = file.getName().toLowerCase();
-                    if (!fileName.endsWith(".jpg") && !fileName.endsWith(".jpeg") && !fileName.endsWith(".png")) {
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            new FailToast(AddProductActivity.this, "Unsupported image format").showToast();
-                        });
-                        return;
-                    }
+                        @Override
+                        public void onProgressUpdate(long bytesWritten, long contentLength, double progress) {}
 
-                    OkHttpClient client = new OkHttpClient();
-                    RequestBody requestBody = new MultipartBody.Builder()
-                            .setType(MultipartBody.FORM)
-                            .addFormDataPart("image", file.getName(),
-                                    RequestBody.create(file, MediaType.parse("image/*")))
-                            .build();
-                    Request request = new Request.Builder()
-                            .url("https://api.imgur.com/3/image")
-                            .addHeader("Authorization", "Client-ID " + BuildConfig.IMGUR_CLIENT_ID)
-                            .post(requestBody)
-                            .build();
-
-                    Response response = client.newCall(request).execute();
-                    if (response.code() == 429) {
-                        // Lấy thời gian reset từ header
-                        String resetTime = response.header("X-Ratelimit-Userreset");
-                        long resetSeconds = resetTime != null ? Long.parseLong(resetTime) - System.currentTimeMillis() / 1000 : 3600;
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            new FailToast(AddProductActivity.this, "Rate limit exceeded. Please try again after " + resetSeconds + " seconds").showToast();
-                        });
-                        return;
-                    }
-                    if (!response.isSuccessful()) {
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            new FailToast(AddProductActivity.this, "Imgur upload failed: " + response.code()).showToast();
-                        });
-                        return;
-                    }
-
-                    String jsonString = response.body().string();
-                    JSONObject json = new JSONObject(jsonString);
-                    if (!json.getBoolean("success")) {
-                        runOnUiThread(() -> {
-                            uploadDialog.dismiss();
-                            try {
-                                new FailToast(AddProductActivity.this, "Imgur error: " + json.getString("status")).showToast();
-                            } catch (JSONException e) {
-                                throw new RuntimeException(e);
-                            }
-                        });
-                        return;
-                    }
-
-                    String imageUrl = json.getJSONObject("data").getString("link");
-                    String deleteHash = json.getJSONObject("data").getString("deletehash");
-
-                    runOnUiThread(() -> {
-                        saveDeleteHash(position, deleteHash);
-                        if (position == FOURTH_IMAGE) {
-                            img4 = imageUrl;
-                            String name = binding.lnAddProduct.edtNameOfProduct.getText().toString();
-                            String price = binding.lnAddProduct.edtPrice.getText().toString();
-                            String amount = binding.lnAddProduct.edtAmount.getText().toString();
-                            String description = binding.lnAddProduct.edtDescp.getText().toString();
-                            Product tmp = new Product("null", name, img1, img2, img3, img4, Integer.valueOf(price),
-                                    binding.lnAddProduct.rbProduct.isChecked() ? "TechAccessory" : "Balo", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
-                            uploadProduct(tmp);
-                        } else {
-                            if (position == FIRST_IMAGE) {
-                                img1 = imageUrl;
-                            } else if (position == SECOND_IMAGE) {
-                                img2 = imageUrl;
-                            } else {
-                                img3 = imageUrl;
-                            }
-                            uploadImage(position + 1);
+                        @Override
+                        public void onSuccess(UploadcareFile result) {
+                            String imageUrl = result.getOriginalFileUrl().toString();
+                            Log.d("UploadcareUpload", "Image uploaded: " + imageUrl);
+                            runOnUiThread(() -> {
+                                switch (position) {
+                                    case FIRST_IMAGE: img1 = imageUrl; break;
+                                    case SECOND_IMAGE: img2 = imageUrl; break;
+                                    case THIRD_IMAGE: img3 = imageUrl; break;
+                                    case FOURTH_IMAGE: img4 = imageUrl; break;
+                                }
+                                if (position == FOURTH_IMAGE) {
+                                    Product tmp = new Product(
+                                            "null",
+                                            binding.lnAddProduct.edtNameOfProduct.getText().toString(),
+                                            img1, img2, img3, img4,
+                                            Integer.parseInt(binding.lnAddProduct.edtPrice.getText().toString()),
+                                            binding.lnAddProduct.rbProduct.isChecked() ? "TechAccessory" : "Balo",
+                                            Integer.parseInt(binding.lnAddProduct.edtAmount.getText().toString()),
+                                            0,
+                                            binding.lnAddProduct.edtDescp.getText().toString(),
+                                            0.0, 0, userId, ""
+                                    );
+                                    uploadProduct(tmp);
+                                } else {
+                                    uploadImage(position + 1);
+                                }
+                            });
                         }
                     });
                 } catch (Exception e) {
-                    Log.e("UploadImage", "Error uploading image", e);
+                    Log.e("UploadcareUpload", "Upload error: " + e.getMessage());
                     runOnUiThread(() -> {
                         uploadDialog.dismiss();
-                        new FailToast(AddProductActivity.this, "Error uploading image: " + e.getMessage()).showToast();
+                        new FailToast(AddProductActivity.this, "Uploadcare upload failed: " + e.getMessage()).showToast();
                     });
                 }
             }).start();
         } else {
             if (position != FOURTH_IMAGE) {
-                if (position == FIRST_IMAGE) img1 = imgOld1;
-                else if (position == SECOND_IMAGE) img2 = imgOld2;
-                else if (position == THIRD_IMAGE) img3 = imgOld3;
+                switch (position) {
+                    case FIRST_IMAGE: img1 = imgOld1; break;
+                    case SECOND_IMAGE: img2 = imgOld2; break;
+                    case THIRD_IMAGE: img3 = imgOld3; break;
+                }
                 uploadImage(position + 1);
             } else {
                 img4 = imgOld4;
-                String name = binding.lnAddProduct.edtNameOfProduct.getText().toString();
-                String price = binding.lnAddProduct.edtPrice.getText().toString();
-                String amount = binding.lnAddProduct.edtAmount.getText().toString();
-                String description = binding.lnAddProduct.edtDescp.getText().toString();
-                Product tmp = new Product("null", name, img1, img2, img3, img4, Integer.valueOf(price),
-                        binding.lnAddProduct.rbProduct.isChecked() ? "TechAccessory" : "Balo", Integer.valueOf(amount), 0, description, 0.0, 0, userId, "");
+                Product tmp = new Product(
+                        "null",
+                        binding.lnAddProduct.edtNameOfProduct.getText().toString(),
+                        img1, img2, img3, img4,
+                        Integer.parseInt(binding.lnAddProduct.edtPrice.getText().toString()),
+                        binding.lnAddProduct.rbProduct.isChecked() ? "TechAccessory" : "Balo",
+                        Integer.parseInt(binding.lnAddProduct.edtAmount.getText().toString()),
+                        0,
+                        binding.lnAddProduct.edtDescp.getText().toString(),
+                        0.0, 0, userId, ""
+                );
                 uploadProduct(tmp);
             }
         }
@@ -551,7 +483,6 @@ public class AddProductActivity extends AppCompatActivity {
             File cacheDir = getCacheDir();
             File file = new File(cacheDir, fileName);
 
-            // Sao chép dữ liệu từ Uri vào file
             InputStream inputStream = getContentResolver().openInputStream(uri);
             if (inputStream != null) {
                 FileOutputStream outputStream = new FileOutputStream(file);
@@ -565,26 +496,9 @@ public class AddProductActivity extends AppCompatActivity {
                 return file;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("FileFromUri", "Error accessing file: " + e.getMessage());
         }
         return null;
-    }
-
-    private void saveDeleteHash(int position, String deleteHash) {
-        switch (position) {
-            case FIRST_IMAGE:
-                deleteHash1 = deleteHash;
-                break;
-            case SECOND_IMAGE:
-                deleteHash2 = deleteHash;
-                break;
-            case THIRD_IMAGE:
-                deleteHash3 = deleteHash;
-                break;
-            case FOURTH_IMAGE:
-                deleteHash4 = deleteHash;
-                break;
-        }
     }
 
     ActivityResultLauncher pickImageLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -689,12 +603,13 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     private boolean isPermissionGranted() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             return checkSelfPermission(Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED;
         } else {
             return checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
         }
     }
+
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();

@@ -18,10 +18,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "IMGUR_CLIENT_ID", "\"b82c8096a9ddfe1\""
+            buildConfigField "String", "IMGUR_CLIENT_ID", "\"3318491ea202ecd\""
+            buildConfigField "String", "UPLOADCARE_PUBLIC_KEY", "\"7e2adea46212b6f184fc\""
+            buildConfigField "String", "UPLOADCARE_SECRET_KEY", "\"18b604ae9413aaac0022\""
         }
         debug {
-            buildConfigField "String", "IMGUR_CLIENT_ID", "\"b82c8096a9ddfe1\""
+            buildConfigField "String", "IMGUR_CLIENT_ID", "\"3318491ea202ecd\""
+            buildConfigField "String", "UPLOADCARE_PUBLIC_KEY", "\"7e2adea46212b6f184fc\""
+            buildConfigField "String", "UPLOADCARE_SECRET_KEY", "\"18b604ae9413aaac0022\""
         }
     }
     viewBinding {
@@ -66,6 +70,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'org.json:json:20231013'
     implementation 'com.github.scribejava:scribejava-apis:8.3.1'
+    implementation("com.uploadcare.android.library:uploadcare-android:4.3.1")
 
 
 }
