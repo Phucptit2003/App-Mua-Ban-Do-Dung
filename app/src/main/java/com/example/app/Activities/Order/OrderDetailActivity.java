@@ -33,7 +33,6 @@ public class OrderDetailActivity extends AppCompatActivity {
     private Bill currentBill;
     private LoadingDialog loadingDialog;
     private String userId;
-    private Notification notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

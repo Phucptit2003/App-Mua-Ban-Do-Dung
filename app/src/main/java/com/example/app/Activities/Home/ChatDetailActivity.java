@@ -43,7 +43,6 @@ public class ChatDetailActivity extends AppCompatActivity {
     private ChatDetailAdapter chatDetailAdapter;
     private DatabaseReference messageReference = FirebaseDatabase.getInstance().getReference("Message");
     private ChildEventListener messageListener;
-    private Notification notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
